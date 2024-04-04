@@ -1,0 +1,373 @@
+
+
+.account_page_wrapper .border-bottom {     border-bottom: 1px solid #f2f2f2!important; }
+
+
+
+
+/*-----------------------------------------------*/
+/*	BOOTSTRAP TABLE CSS
+/*-----------------------------------------------*/
+.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-sm td,.table-sm th{padding:.3rem}.table-bordered{border:1px solid #dee2e6}.table-bordered td,.table-bordered th{border:1px solid #dee2e6}.table-bordered thead td,.table-bordered thead th{border-bottom-width:2px}.table-borderless tbody+tbody,.table-borderless td,.table-borderless th,.table-borderless thead th{border:0}.table-striped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,.05)}.table-hover tbody tr:hover{color:#212529;background-color:rgba(0,0,0,.075)}.table-primary,.table-primary>td,.table-primary>th{background-color:#b8daff}.table-primary tbody+tbody,.table-primary td,.table-primary th,.table-primary thead th{border-color:#7abaff}.table-hover .table-primary:hover{background-color:#9fcdff}.table-hover .table-primary:hover>td,.table-hover .table-primary:hover>th{background-color:#9fcdff}.table-secondary,.table-secondary>td,.table-secondary>th{background-color:#d6d8db}.table-secondary tbody+tbody,.table-secondary td,.table-secondary th,.table-secondary thead th{border-color:#b3b7bb}.table-hover .table-secondary:hover{background-color:#c8cbcf}.table-hover .table-secondary:hover>td,.table-hover .table-secondary:hover>th{background-color:#c8cbcf}.table-success,.table-success>td,.table-success>th{background-color:#c3e6cb}.table-success tbody+tbody,.table-success td,.table-success th,.table-success thead th{border-color:#8fd19e}.table-hover .table-success:hover{background-color:#b1dfbb}.table-hover .table-success:hover>td,.table-hover .table-success:hover>th{background-color:#b1dfbb}.table-info,.table-info>td,.table-info>th{background-color:#bee5eb}.table-info tbody+tbody,.table-info td,.table-info th,.table-info thead th{border-color:#86cfda}.table-hover .table-info:hover{background-color:#abdde5}.table-hover .table-info:hover>td,.table-hover .table-info:hover>th{background-color:#abdde5}.table-warning,.table-warning>td,.table-warning>th{background-color:#ffeeba}.table-warning tbody+tbody,.table-warning td,.table-warning th,.table-warning thead th{border-color:#ffdf7e}.table-hover .table-warning:hover{background-color:#ffe8a1}.table-hover .table-warning:hover>td,.table-hover .table-warning:hover>th{background-color:#ffe8a1}.table-danger,.table-danger>td,.table-danger>th{background-color:#f5c6cb}.table-danger tbody+tbody,.table-danger td,.table-danger th,.table-danger thead th{border-color:#ed969e}.table-hover .table-danger:hover{background-color:#f1b0b7}.table-hover .table-danger:hover>td,.table-hover .table-danger:hover>th{background-color:#f1b0b7}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-hover .table-light:hover{background-color:#ececf6}.table-hover .table-light:hover>td,.table-hover .table-light:hover>th{background-color:#ececf6}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table-hover .table-dark:hover{background-color:#b9bbbe}.table-hover .table-dark:hover>td,.table-hover .table-dark:hover>th{background-color:#b9bbbe}.table-active,.table-active>td,.table-active>th{background-color:rgba(0,0,0,.075)}.table-hover .table-active:hover{background-color:rgba(0,0,0,.075)}.table-hover .table-active:hover>td,.table-hover .table-active:hover>th{background-color:rgba(0,0,0,.075)}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.table-dark.table-bordered{border:0}.table-dark.table-striped tbody tr:nth-of-type(odd){background-color:rgba(255,255,255,.05)}.table-dark.table-hover tbody tr:hover{color:#fff;background-color:rgba(255,255,255,.075)}@media (max-width:575.98px){.table-responsive-sm{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.table-responsive-sm>.table-bordered{border:0}}@media (max-width:767.98px){.table-responsive-md{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.table-responsive-md>.table-bordered{border:0}}@media (max-width:991.98px){.table-responsive-lg{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.table-responsive-lg>.table-bordered{border:0}}@media (max-width:1199.98px){.table-responsive-xl{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.table-responsive-xl>.table-bordered{border:0}}.table-responsive{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.table-responsive>.table-bordered{border:0}
+
+
+ 
+
+ .rtl .payment-right .left {
+     float: right !important;
+}
+ .rtl .payment-right .right {
+     float: left !important;
+}
+ .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+     color: #fff;
+     background-color: #212121;
+     border-radius: 0px;
+}
+ #ajax_chat_list {
+     max-height: 730px;
+     overflow: hidden;
+}
+/* ============================================================================= DASHBOARD ========================================================================== */
+ 
+ #AccountDashTabsBottom.nav-pills .nav-link.active, #AccountDashTabsBottom.nav-pills .show>.nav-link {
+     background-color: #ededed;
+     color:#333333;
+     font-weight: 600;
+     font-size:14px;
+}
+ #AccountDashTabsBottom.nav-pills .nav-link {
+    color: #6c6c6c;
+}
+ .dashboard-list {
+     border:1px solid #f2f2f2;
+}
+ .dashboard-list li {
+     border-radiius:0px;
+     line-height:40px;
+}
+
+.dashboard-list .list-group-item { border: 1px solid #f2f2f2; border-width: 0 0 1px; background: #fff; }
+
+@media (min-width: 991.98px){
+	.dashboard-list li {
+	 
+		 line-height:40px;
+	} 
+}
+
+ .dashboard-list li:hover {
+     background:#f8f9fa;
+}
+ .dashboard-list li i {
+     margin-right: 30px;
+     margin-left: 20px;
+     font-size: 22px;
+     float: left;
+     margin-top: 10px;
+}
+ .dashboard-list li a {
+     color:#444;
+}
+
+.custom-tab-wrap .tab-content { border:1px solid #f2f2f2; }
+
+ .custom-tab-wrap ul {
+}
+ .custom-tab-wrap ul li {
+     flex: 0 0 20%;
+}
+ .custom-tab-wrap ul li a {
+     padding: 10px 0;
+     text-align: center;
+     color: #b0afb4 !important;
+     border: 1px solid #f2f2f2 !important;
+     border-radius: 0 !important;
+     border-right: none !important;
+     transition: all 300ms ease;
+     position: relative;
+     font-size:12px;
+     min-height:77px;
+}
+
+.custom-tab-wrap .nav-tabs {
+   border-bottom: 30px solid #f9f9f9;
+}
+
+ .custom-tab-wrap ul li a strong {
+     font-weight:400 !important;
+}
+ .custom-tab-wrap ul li a.active:after {
+     content: '';
+     position: absolute;
+     background: #333;
+     bottom: -2px;
+     height: 2px;
+     width: 100%;
+     left: 0;
+     transition: all 300ms ease;
+}
+ .custom-tab-wrap ul li a:after {
+     content: '';
+     position: absolute;
+     background: #333;
+     bottom: -2px;
+     height: 2px;
+     width: 0%;
+     left: 0;
+     transition: all 300ms ease;
+}
+ .custom-tab-wrap ul li a:hover:after {
+     width: 100%;
+}
+
+ .custom-tab-wrap ul li a span {
+     color: #333;
+     font-size: 25px;
+     font-weight: 700;
+}
+
+ 
+ 
+
+ @media (max-width: 768px) {
+ 	
+	#AccountDashHeader { font-size:13px; }
+ 
+     .custom-tab-wrap ul li {
+        
+    }
+     .custom-tab-wrap ul li a {
+         font-size: 14px;
+    }
+     .custom-tab-wrap ul li a span {
+         font-size: 18px;
+    }
+	
+	.custom-tab-wrap .featuredribbion { display:none; }
+	
+	.custom-tab-wrap ul li a strong { font-size:11px; }
+	
+	.dashboard-list { font-size:12px !important; }
+	
+}
+/* ============================================================================= TOGGLE ========================================================================== */
+ .toggle{
+    width:80px;
+    height:28px;
+    position:relative;
+     background-color:#e4e4e4;
+    -webkit-box-shadow:inset 2px 2px 6px -2px rgba(0,0,0,.175);
+    -moz-box-shadow:inset 2px 2px 6px -2px rgba(0,0,0,.175);
+    box-shadow:inset 2px 2px 6px -2px rgba(0,0,0,.175);
+    cursor:pointer;
+    overflow:hidden;
+     font-size: 12px;
+}
+.toggle .no,.toggle .switch,.toggle .yes{
+    transition:all 200ms ease-out;
+    -webkit-transition:all 200ms ease-out;
+    -moz-transition:all 200ms ease-out;
+    -o-transition:all 200ms ease-out
+}
+.toggle .switch{
+    width:37px;
+    height:25px;
+    display:block;
+    position:absolute;
+    top:2px;
+    left:2px;
+    background:url(../admin/images/toggle.png) no-repeat;
+    transition:all 200ms ease-out
+}
+.toggle .no,.toggle .yes{
+    width:34px;
+    height:28px;
+    display:block;
+    position:absolute;
+    top:5px;
+    text-align:center;
+    line-height:20px;
+}
+.toggle .yes{
+    left:-34px
+}
+.toggle .no{
+    left:41px
+}
+.toggle.on{
+    background-color:#0a9e65;
+     color:#fff;
+}
+.toggle.on .yes{
+    left:2px
+}
+.toggle.on .no{
+    left:82px
+}
+.toggle.on .switch{
+    left:41px
+}
+.customfile{
+    position:relative;
+    float:left;
+    cursor:pointer;
+    margin-bottom:18px
+}
+/* ipad */
+ 
+ @media (min-width: 991.98px) and (max-width: 1200.98px) {
+     #accountmenubar .card-body i {
+        display:none;
+    }
+	#accountmenubar .btn-xl { padding:0px;  }
+}
+
+
+#accountmenubar .btn-xl { font-size: 16px; }
+
+#accountmenubar .btn-xl:hover i, #accountmenubar .btn-xl.shadow-sm {  font-weight:bold; }
+ 
+/*-----------------------------------------------*/
+/*	00 - 
+/*-----------------------------------------------*/
+
+ 
+  
+
+/* list sections */
+ .img-list img {
+     max-width:50px;
+     max-height:40px;
+     border: 1px solid #ddd;
+     padding: 2px;
+}
+/* Tabs panel */
+ .tabbable-panel {
+     position: relative;
+}
+ .tabbable-panel .nav-tabs {
+     border-bottom:4px solid #eee;
+}
+ .tabbable-panel .btn {
+     position:absolute;
+     right:10px;
+     top: 30px;
+}
+ .tabbable-panel .nav-tabs .nav-item {
+     margin-right:40px;
+}
+ .tabbable-panel .nav-tabs .nav-item.show .nav-link, .tabbable-panel .nav-tabs .nav-link.active {
+     background:none !important;
+     border:0px;
+     border-bottom: 4px solid #000;
+     padding: 0px;
+     margin-bottom: -4px;
+}
+ .tabbable-panel .nav-tabs .nav-item.show .nav-link, .tabbable-panel .nav-tabs .nav-link.active {
+     background: none !important;
+}
+ .tabbable-panel .nav-tabs .nav-link:focus, .tabbable-panel .nav-tabs .nav-link:hover {
+}
+ .tabbable-panel .nav-tabs a {
+     font-size:18px;
+     color:#a5a7a9;
+     border: 0px;
+}
+ .tabbable-panel a .badge-pill {
+     border:1px solid #ddd;
+     border-radius:8px;
+}
+ .tabbable-panel .nav-link {
+     padding:0px;
+}
+ @media (min-width: 1300px){
+}
+/* Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1200px) {
+     #topsearch {
+         font-size:20px;
+    }
+     .info-max-200 {
+         max-width:200px;
+    }
+     .account-footer {
+         position:absolute;
+         bottom:-200px;
+         left: -10px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+}
+/* ipad */
+ @media (min-width: 576px) and (max-width: 991.98px) {
+}
+/* mobile */
+ @media (max-width: 575.98px) {
+    /* top bit */
+     .dashboard-usertop button {
+         display:inline-block !important;
+    }
+     #accountpage-body .main {
+         padding:0px !important;
+         padding-bottom:100px !important 
+    }
+     .tabbable-panel .btn {
+         position:absolute;
+         right:10px;
+         top: 20px;
+         font-size: 14px !important;
+    }
+     .tabbable-panel .nav-tabs a {
+         font-size:16px;
+         color:#a5a7a9;
+         border: 0px;
+         line-height: 40px;
+    }
+     .tabbable-panel .nav-tabs .nav-item {
+         margin-right: 0px;
+         width: 100%;
+    }
+}
+/* dashboard user top */
+ .dashboard-usertop {
+     padding: 0 15px;
+     position: sticky;
+     top: 0;
+     background:#fff;
+}
+ .dashboard-usertop button {
+     position:absolute;
+     top:0px;
+     right:0px;
+     display:none;
+     z-index:1;
+}
+ .dashboard-usertop-infos {
+     padding-top: 12px;
+     padding-left: 0;
+}
+ .dashboard-usertop img {
+     height: 45px;
+     width: 45px;
+     object-fit: cover;
+     margin-right: 10px;
+     border-right: 2px solid transparent;
+     border-bottom: none !important;
+     cursor: pointer;
+     color: #8A98AC;
+     margin-top: 11px;
+     border-radius: 50%;
+}
+ .dashboard-usertop form input {
+     padding-left:50px;
+     margin-top:15px;
+}
+ .dashboard-usertop form button {
+     display:block !important;
+     left:5px;
+     bottom:1px;
+     position:absolute;
+}
+
