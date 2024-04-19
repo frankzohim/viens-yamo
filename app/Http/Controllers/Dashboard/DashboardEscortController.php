@@ -67,6 +67,7 @@ class DashboardEscortController extends Controller
                 //return $ads;
                 if($ads){
                     $ads = $ads['data'];
+                    //dd('change');
                     //dd($ads);
                     return view('dashboard.escort.ads.index', compact('user', 'ads'));
                 }
@@ -144,6 +145,7 @@ class DashboardEscortController extends Controller
         try{
             $response = Http::get($url."/api/userAds/".$id);
             $ads = json_decode((string) $response->getBody(), true);
+            //dd($ads['data']);
             return $ads;
 
         }

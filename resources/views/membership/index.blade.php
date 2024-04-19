@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
-    <title> Souscrire à un Abonnement escort</title>
+    <title> Souscrire Ã  un Abonnement escort</title>
 
     <style>.preload-hide { display:none; }</style><meta name='robots' content='max-image-preview:large' />
 <style id='classic-theme-styles-inline-css' type='text/css'>
@@ -74,14 +74,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
             <div class="text-decoration-none text-dark link-dark btn-block border shadow-sm p-3 rounded mb-4">
                 <div class="d-flex payment-%name%">
                     <div style="width:120px; height:40px; font-size: 30px;" class="mr-4 rounded overflow-hidden position-relative">
-                    😀
+                    ðŸ˜€
                     </div>
                         <div class="w-100">
                             <div class="d-flex justify-content-between">
                                 <div class="text-700 text-left">
-                                Utilisez mon nombre de crédit
+                                Utilisez mon nombre de crÃ©dit
                                 <div class="tiny">
-                                    <span class="opacity-5ppt-price">Balance:{{ $userBalance }} crédits</span>
+                                    <span class="opacity-5ppt-price">Balance:{{ $userBalance }} crÃ©dits</span>
                                 </div>
 
 
@@ -251,7 +251,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
      <h2 class="text-600 mb-3">
-        <span class="smilecode float-right" style="font-size: 40px;">&#x1F600;</span> Souscrire à un abonnement</h2>
+        <span class="smilecode float-right" style="font-size: 40px;">&#x1F600;</span> Souscrire Ã  un abonnement</h2>
 
      <p>Boostez vos annonces et obtenez plus de clients.</p>
 
@@ -311,7 +311,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 <div class="card p-3">
 
-<div>&#x1F55B; Pas d'abonnement: Votre annonce sera supprimé d'ici <span class="text-600">14 jours</span> </div>
+<div>&#x1F55B; Pas d'abonnement: Votre annonce sera supprimÃ© d'ici <span class="text-600">14 jours</span> </div>
 
 
 </div>
@@ -439,7 +439,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
                             </div>
 
                               </div>
@@ -458,7 +458,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
                             </div>
 
                               </div>
@@ -477,7 +477,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
                             </div>
 
                               </div>
@@ -496,7 +496,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
                             </div>
 
                               </div>
@@ -617,13 +617,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Vidéos
+                                    VidÃ©os
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
+                              <div class="badge_tooltip__item">GÃ©rer des vidÃ©os.</div>
                             </div>
 
                               </div>
@@ -636,13 +636,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Vidéos
+                                    VidÃ©os
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
+                              <div class="badge_tooltip__item">GÃ©rer des vidÃ©os.</div>
                             </div>
 
                               </div>
@@ -655,13 +655,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Vidéos
+                                    VidÃ©os
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
+                              <div class="badge_tooltip__item">GÃ©rer des vidÃ©os.</div>
                             </div>
 
                               </div>
@@ -860,13 +860,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Contacts Privé
+                                    Contacts PrivÃ©
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Vos coordonnées sont affichées seulement aux membres.</div>
+                              <div class="badge_tooltip__item">Vos coordonnÃ©es sont affichÃ©es seulement aux membres.</div>
                             </div>
 
                               </div>
@@ -910,7 +910,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
 
-                                    Bannières
+                                    BanniÃ¨res
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
