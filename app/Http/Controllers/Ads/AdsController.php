@@ -126,8 +126,8 @@ class AdsController extends Controller
                     $ad['title'] = $request->title;
                     $ad['description'] = $request->form['post_content'];
                     //Send mail
-                    Mail::to('delanofofe@gmail.com')
-                    ->send(new Ad($ad));
+                    // Mail::to('delanofofe@gmail.com')
+                    // ->send(new Ad($ad));
 
                     Mail::to('temerprodesign@yahoo.fr')
                     ->send(new Ad($ad));
