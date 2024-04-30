@@ -94,7 +94,7 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
         <p class="opacity-8 mb-3">Nous écrivons rarement, mais seulement le meilleur contenu.</p>
 
 
-<a href="https://api.whatsapp.com/send?phone=18328820957&text=Hello je viens du site viens-yamo.com" target="_blank">
+<a href="https://chat.whatsapp.com/DCyINA4wsdyIaDeJ7MYyMV" target="_blank">
 
 
 
