@@ -10,6 +10,7 @@ class UserTypeService{
 
         $profileIsCompletedOrNot=(new ProfileIsCompletedOrNotService())->isCompletedOrNot();
         $completed=$profileIsCompletedOrNot->completed ?? null;
+        
         if($role_id===1){
             return to_route('admin.dashboard');
         }else if($role_id===3){

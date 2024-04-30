@@ -19,7 +19,9 @@ class Admin
     {
 
         $currentUser=Session::get('currentUser');
+
         $role=$currentUser->role_id ?? null;
+        
         if(empty($currentUser)){
             //dd($currentUser);
             return to_route("login");
