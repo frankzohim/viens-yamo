@@ -82,7 +82,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ProfilController;
 use App\Http\Controllers\Admin\User\GiveCreditController;
 use App\Http\Controllers\User\UpdateUserController;
-
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\Admin\Ads\AdController;
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +96,8 @@ use App\Http\Controllers\Admin\Ads\AdController;
 */
 
 
+//Localization Route
+Route::get('lang/{locale}', [LocalizationController::class,'index']);
 
 Route::get('/',[HomepageController::class,'homepage'])->name('homepage');
 Route::get('/check-age',[HomepageController::class,'checkAge'])->name('check-age');

@@ -34,8 +34,8 @@ class ContactController extends Controller
                 $contact =  (json_decode((string) $contact->getBody(), true))['data'];
                 //dd($contact);
                 //Send mail here
-                Mail::to('delanofofe@gmail.com')
-                ->send(new Contact($contact));
+                // Mail::to('delanofofe@gmail.com')
+                // ->send(new Contact($contact));
 
                 Mail::to('temerprodesign@yahoo.fr')
                 ->send(new Contact($contact));

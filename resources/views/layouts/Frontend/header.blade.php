@@ -255,7 +255,7 @@ nav .fa{
 
 
         <li><a href="{{ route('ads.list') }}" >
-          Annonces</a>
+          {{ __("Annonces")}}</a>
         </li>
 
     @if(isset($user))
