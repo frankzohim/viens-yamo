@@ -97,7 +97,7 @@ use App\Http\Controllers\Admin\Ads\AdController;
 
 
 //Localization Route
-Route::get('lang/{locale}', [LocalizationController::class,'index']);
+Route::get('lang/{locale}', [LocalizationController::class,'index'])->name('lang');
 
 Route::get('/',[HomepageController::class,'homepage'])->name('homepage');
 Route::get('/check-age',[HomepageController::class,'checkAge'])->name('check-age');

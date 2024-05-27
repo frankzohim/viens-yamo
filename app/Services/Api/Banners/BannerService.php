@@ -71,13 +71,13 @@ class BannerService{
         //dd($status);
             try{
 
-                $response = Http::attach('myfile', $photo, $fileName)->post($url."/api/banners/", [
+                $response = Http::attach('myfile', $photo, $fileName)->post($url."/api/banners", [
                             'id' => $banner['id'],
                             'uploadedFile' => 1,
                             'status' => $status,
                         ]);
 
-                // dd($response->body());
+                dd($response->body());
 
                 //Delete directory
                 \Illuminate\Support\Facades\Storage::deleteDirectory('banners/'.$banner['id']);

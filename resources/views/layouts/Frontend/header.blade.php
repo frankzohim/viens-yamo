@@ -130,15 +130,21 @@ nav .fa{
             <div class="col-md-6 pr-0">
               <nav ppt-nav="" class="ppt-top-menu pl-0 seperator" >
                 <ul>
+                  @php
+                   $lang = App::getLocale();
+                  @endphp
                               <li class="dropdown"> <a href="#" class="dropdown-toggle noc" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fab fa-bitcoin"></i>
+                                  <img src="{{ asset('assets/images/lang/'.$lang.'.png') }}" width="15px"  >
                                   </a>
                     <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">
-                                      <i class="fal fa-dollar-sign float-right mt-2"></i>
-                                      Français</a>
-                                      <a class="dropdown-item" href="#">
-                                      <i class="fal fa-pound-sign float-right mt-2"></i>
+                                      <a class="dropdown-item" href="{{ route('lang', ['locale' =>'fr']) }}">
+                                    
+                                      
+                                      <img src="{{asset('assets/images/lang/fr.png')}}" class="float-right " width="25px" >
+                                      Français
+                                    </a>
+                                      <a class="dropdown-item" href="{{ route('lang', ['locale' =>'en']) }}">
+                                      <img src="{{asset('assets/images/lang/en.png')}}" class="float-right " width="25px" >
                                       English</a>
 
 
@@ -255,7 +261,7 @@ nav .fa{
 
 
         <li><a href="{{ route('ads.list') }}" >
-          {{ __("Annonces")}}</a>
+          {{ __("Ads")}} </a>
         </li>
 
     @if(isset($user))

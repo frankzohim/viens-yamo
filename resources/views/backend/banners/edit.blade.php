@@ -44,7 +44,7 @@
                                 <div id="ppt-invalid-fields1" >
                                     <div class="container ">
                                         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-                                            <strong><i class="fas fa-exclamation-triangle mr-2"></i> Hello {{ session('failure') }}  </strong> <span id="ppt-invalid-fields-text">{{$errors->first()}}</span>
+                                            <strong><i class="fas fa-exclamation-triangle mr-2"></i> Erreur : {{ session('failure') }}  </strong> <span id="ppt-invalid-fields-text">{{$errors->first()}}</span>
                                         </div>
                                     </div>
                                 </div>

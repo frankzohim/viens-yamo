@@ -35,22 +35,24 @@ class BannerController extends Controller
     }
 
     public function update(Request $request){
-
+            
+            
              $uploadedFile = false;
             if(is_uploaded_file($request->file('image'))){
 
                 //File has been uploaded
-
+                
                 $image = $request->file('image');
                 $extension = $image->getClientOriginalExtension();
 
-                $allowedfileExtension=['jpg','png','jpeg'];
+                $allowedfileExtension=['jpg','png','jpeg','JPG', 'PNG','JPEG'];
 
                 $check = in_array($extension,$allowedfileExtension);
 
                 if(!$check){
+                    //dd('Updating');
 
-                    return Redirect::back()->withErrors(['failure' => "Extension invalide"]);
+                    return Redirect::back()->with(['failure' => "Extension invalide"]);
                 }
 
                 $uploadedFile = true;
@@ -63,7 +65,7 @@ class BannerController extends Controller
          $banner['myfile'] = $request->file('image');
 
         $banner = (new BannerService)->create($banner);
-        //dd($banner);
+        //dd($banner->body());
         if($banner){
         
             if($banner->status() == 200){
