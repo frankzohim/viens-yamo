@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
-    <title> Souscrire Ã  un Abonnement escort</title>
+    <title> Souscrire À  un Abonnement escort</title>
 
     <style>.preload-hide { display:none; }</style><meta name='robots' content='max-image-preview:large' />
 <style id='classic-theme-styles-inline-css' type='text/css'>
@@ -28,6 +28,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 </head>
 <body class="page-template page-template-templates page-template-tpl-page-memberships page-template-templatestpl-page-memberships-php page page-id-16 logged-in body-hide-footer demomode theme-es tall-images innerpage" >
 
+
+
 <div id="wrapper" style="display:none;" class="">
 
 <div id="sidebar-wrapper"  style="display:none; " class="shadow">
@@ -38,13 +40,16 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-    @if(session('membership'))
+    @if($membership != 'null')
+    @php
+     $data = explode(".", $membership);
+    @endphp
     <div class="ppt-modal-wrap show modal-payment modal-bottom-rightxxx"><div class="ppt-modal-wrap-overlay"></div><div class="ppt-modal-item ppt-animate-bouncein bg-white w-500 ppt-modal-shadow"><div class="ppt-modal-container"><div class="card-popup large">
         <div class="bg-primary pt-3">
             <div class="card-popup-content">
             <div class="text-white mt-3">
-                <strong class="h1 ppt-price ppt-price-set">XAF{{ Session::get('membership')->price }}</strong>
-                <div class="text-truncate mt-2 opacity-8 text-600">Abonnement:{{ Session::get('membership')->membership_name }}</div>
+                <strong class="h1 ppt-price ppt-price-set">XAF{{ $data[2] }} </strong>
+                <div class="text-truncate mt-2 opacity-8 text-600">Abonnement:{{ $data[1] }}</div>
 
             </div>
             </div>
@@ -67,21 +72,21 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <form method="post" action="{{ route('purchase-with-credit') }}" name="checkout_usercredit1" style="cursor:pointer;" onclick="togglePay();jQuery(this).submit();" onsubmit="jQuery(this).find(\'button\').attr(\'disabled\', true);">
         @csrf
-            <input type="hidden" name="membership_id" id="credit_total" value="{{ Session::get('membership')->id }}">
+            <input type="hidden" name="membership_id" id="credit_total" value="{{ $data[0] }}">
         <input type="hidden" name="announcement_id" value="{{ $id }}" class="paymentcustomfield">
 
-        @if($user->balance >= Session::get('membership')->price)
+        @if($user->balance >= $data[2])
             <div class="text-decoration-none text-dark link-dark btn-block border shadow-sm p-3 rounded mb-4">
                 <div class="d-flex payment-%name%">
                     <div style="width:120px; height:40px; font-size: 30px;" class="mr-4 rounded overflow-hidden position-relative">
-                    ðŸ˜€
+                    Crédit 
                     </div>
                         <div class="w-100">
                             <div class="d-flex justify-content-between">
                                 <div class="text-700 text-left">
-                                Utilisez mon nombre de crÃ©dit
+                                Utilisez mon nombre de crédit
                                 <div class="tiny">
-                                    <span class="opacity-5ppt-price">Balance:{{ $userBalance }} crÃ©dits</span>
+                                    <span class="opacity-5ppt-price">Balance:{{ $userBalance }} crédits</span>
                                 </div>
 
 
@@ -115,8 +120,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <form method="post" style="margin:0px !important;" action="{{route('initPayment')}}" name="checkout_paypal1">
             @csrf
-            <input type="hidden" name="price" value="{{ Session::get('membership')->price }}">
-            <input type="hidden" name="membership_id" id="credit_total" value="{{ Session::get('membership')->id }}">
+            <input type="hidden" name="price" value="{{ $data[2] }}">
+            <input type="hidden" name="membership_id" id="credit_total" value="{{ $data[0] }}">
             <input type="hidden" name="announcement_id" value="{{ $id }}" class="paymentcustomfield">
 
 
@@ -154,8 +159,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
                         <form method="post" style="margin:0px !important;" action="{{route('init-cool-pay')}}" name="checkout_paypal1">
                             @csrf
-                            <input type="hidden" name="price" value="{{ Session::get('membership')->price }}">
-                            <input type="hidden" name="membership_id" id="credit_total" value="{{ Session::get('membership')->id }}">
+                            <input type="hidden" name="price" value="{{ $data[2] }}">
+                            <input type="hidden" name="membership_id" id="credit_total" value="{{ $data[0] }}">
                             <input type="hidden" name="announcement_id" value="{{ $id }}" class="paymentcustomfield">
 
 
@@ -251,7 +256,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
      <h2 class="text-600 mb-3">
-        <span class="smilecode float-right" style="font-size: 40px;">&#x1F600;</span> Souscrire Ã  un abonnement</h2>
+        <span class="smilecode float-right" style="font-size: 40px;">&#x1F600;</span> Souscrire À  un abonnement</h2>
 
      <p>Boostez vos annonces et obtenez plus de clients.</p>
 
@@ -271,7 +276,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     <div class="col-lg-4 mb-4">
         <div class="card card-pricing-membership shadow-sm mb-3">
 
-                    <a class="text-dark text-decoration-none" style="cursor: pointer" href="{{ route('show.plan',$membership['id']) }}">
+                    <a class="text-dark text-decoration-none" style="cursor: pointer" href="{{ route('show.plan',['id'=>$membership['id'],'adsId'=>$id]) }}">
 
 
           <div class="card-body text-center">
@@ -311,7 +316,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 <div class="card p-3">
 
-<div>&#x1F55B; Pas d'abonnement: Votre annonce sera supprimÃ© d'ici <span class="text-600">14 jours</span> </div>
+<div>&#x1F55B; Pas d'abonnement: Votre annonce sera supprimée d'ici <span class="text-600">14 jours</span> </div>
 
 
 </div>
@@ -439,7 +444,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
+                              <div class="badge_tooltip__item">Gérer ses photos</div>
                             </div>
 
                               </div>
@@ -458,7 +463,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
+                              <div class="badge_tooltip__item">Gérer ses photos</div>
                             </div>
 
                               </div>
@@ -477,7 +482,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
+                              <div class="badge_tooltip__item">Gérer ses photos</div>
                             </div>
 
                               </div>
@@ -496,7 +501,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer ses photos</div>
+                              <div class="badge_tooltip__item">Gérer ses photos</div>
                             </div>
 
                               </div>
@@ -623,7 +628,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer des vidÃ©os.</div>
+                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
                             </div>
 
                               </div>
@@ -636,13 +641,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    VidÃ©os
+                                    Vidéos
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer des vidÃ©os.</div>
+                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
                             </div>
 
                               </div>
@@ -655,13 +660,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    VidÃ©os
+                                    Vidéos
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">GÃ©rer des vidÃ©os.</div>
+                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
                             </div>
 
                               </div>
@@ -860,13 +865,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Contacts PrivÃ©
+                                    Contacts Privé
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Vos coordonnÃ©es sont affichÃ©es seulement aux membres.</div>
+                              <div class="badge_tooltip__item">Vos coordonnées sont affichées seulement aux membres.</div>
                             </div>
 
                               </div>
@@ -910,7 +915,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
 
-                                    BanniÃ¨res
+                                    Banniéres
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
@@ -932,9 +937,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
     </div>
 
+  
     <a href="{{ route('db.escort.ads') }}" class="text-decoration-none text-dark" >
     <div class="btn-light text-center text-600 p-3 mt-4">
-      Pas Maintenant!   </div>
+      Pas Maintenant!  </div>
     </a>
 
 

@@ -97,24 +97,24 @@ nav .fa{
             <i class="fa fa-bars" onclick="hideMenu()"></i>
             <ul>
 
-                  <li><a href="{{ route('homepage') }}"> ACCUEIL </a></li>
-                  <li><a href="{{ route('ads.list') }}"> ANNONCES </a></li>
-                  <li><a href="{{ route('escort.list') }}"> ESCORTS </a></li>
+                  <li><a href="{{ route('homepage') }}"> {{ __("HOME")}}  </a></li>
+                  <li><a href="{{ route('ads.list') }}"> {{ __("ADS")}}  </a></li>
+                  <li><a href="{{ route('escort.list') }}">  {{ __("ESCORTS")}}  </a></li>
                    @if(!isset($user))
-                  <li><a href="{{ route('login') }}"> CONNEXION </a></li>
-                  <li><a href="/register"> INSCRIPTION </a></li>
+                  <li><a href="{{ route('login') }}">  {{ __("LOGIN")}}  </a></li>
+                  <li><a href="/register">  {{ __("REGISTER")}}  </a></li>
                   @else
                    @if($user->role_id==2)
-                        <li> <a href="{{ route('db.escort.index') }}">MON TABLEAU DE BORD</a> </li>
+                        <li> <a href="{{ route('db.escort.index') }}">  {{ __("MY DASHBOARD")}}</a> </li>
                     @endif
                     @if($user->role_id==1)
-                        <li> <a href="{{ route('admin.dashboard') }}">MON TABLEAU DE BORD</a> </li>
+                        <li> <a href="{{ route('admin.dashboard') }}"> {{ __("MY DASHBOARD")}}</a> </li>
                     @endif
                     @if($user->role_id==3)
-                        <li> <a href="{{ route('db.customer.index') }}">MON TABLEAU DE BORD</a> </li>
+                        <li> <a href="{{ route('db.customer.index') }}"> {{ __("MY DASHBOARD")}}</a> </li>
                     @endif
 
-                  <li onclick="event.preventDefault(); document.getElementById('logout').submit();"><a href="#"> DÉCONNEXION </a></li>
+                  <li onclick="event.preventDefault(); document.getElementById('logout').submit();"><a href="#">  {{ __("LOGOUT")}} </a></li>
                   @endif
                   <li><a href="{{ route('contact') }}"> CONTACT</a></li>
 
@@ -151,22 +151,22 @@ nav .fa{
                                     </div>
                   </li>
                    @if(!isset($user))
-                    <li> <a href="{{ route('login') }}">Connexion</a> </li>
-                    <li> <a href="/register">Inscription</a> </li>
+                    <li> <a href="{{ route('login') }}">{{ __("Login")}}</a> </li>
+                    <li> <a href="/register">{{ __("Register")}}</a> </li>
                   @else
                     @if($user->role_id==2)
-                        <li> <a href="{{ route('db.escort.index') }}">Ton Tableau de bord</a> </li>
+                        <li> <a href="{{ route('db.escort.index') }}">{{ __("My Dashboard")}}</a> </li>
                     @endif
                     @if($user->role_id==1)
-                        <li> <a href="{{ route('admin.dashboard') }}">Ton Tableau de bord</a> </li>
+                        <li> <a href="{{ route('admin.dashboard') }}">{{ __("My Dashboard")}}</a> </li>
                     @endif
                     @if($user->role_id==3)
-                        <li> <a href="{{ route('db.customer.index') }}">Ton Tableau de bord</a> </li>
+                        <li> <a href="{{ route('db.customer.index') }}">{{ __("My Dashboard")}}</a> </li>
                     @endif
                      <form method="POST" action="{{ route('logout') }}" id="logout">
                                 @csrf
                             </form>
-                    <li onclick="event.preventDefault(); document.getElementById('logout').submit();"> <a href="#">Déconnexion</a> </li>
+                    <li onclick="event.preventDefault(); document.getElementById('logout').submit();"> <a href="#">{{ __("Logout")}} </a> </li>
                   @endif
                   <li class="hide-ipad"> <div class="ppt-icons-social  _style2 size-xs ">
                       <ul>
@@ -266,13 +266,13 @@ nav .fa{
 
     @if(isset($user))
             @if($user->role_id==2)
-              <li> <a href="{{ route('db.escort.index') }}">Mon Tableau de bord</a> </li>
+              <li> <a href="{{ route('db.escort.index') }}">{{ __("My Dashboard")}}</a> </li>
             @endif
             @if($user->role_id==1)
-                <li> <a href="{{ route('admin.dashboard') }}">Mon Tableau de bord</a> </li>
+                <li> <a href="{{ route('admin.dashboard') }}">{{ __("My Dashboard")}}</a> </li>
             @endif
             @if($user->role_id==3)
-                <li> <a href="{{ route('db.customer.index') }}">Mon Tableau de bord</a> </li>
+                <li> <a href="{{ route('db.customer.index') }}">{{ __("My Dashboard")}}</a> </li>
             @endif
         @if(isset($user))
 
@@ -286,7 +286,8 @@ nav .fa{
      @if(!isset($user))
 
       <li><a target="_blank" href="https://api.whatsapp.com/send?phone=18328820957&text=Hello j'ai besoin d'aide pour m'inscrire" >
-            Besoin d'aide pour s'inscrire?</a>
+        {{ __("Need help registering?")}}
+            </a>
           </li>
       @endif
         {{-- <li><i id="popup-search" style="cursor: pointer" id="search" class="fa fa-search"></i></li> --}}
@@ -310,7 +311,7 @@ nav .fa{
                       <div class="hide-mobile" >
 
 
-                        <a id="btn-annonce" href="{{ route('ads.create') }}"  class="btn-secondary  rounded-pill text-600"  data-ppt-btn="" data-ppt-btn-txt="">Publier une annonce</a>
+                        <a id="btn-annonce" href="{{ route('ads.create') }}"  class="btn-secondary  rounded-pill text-600"  data-ppt-btn="" data-ppt-btn-txt="">{{ __("Add ad")}}</a>
 
             </div>
 
@@ -330,7 +331,7 @@ nav .fa{
 
 
 
-        <li><a href="#">Viens-Yamo Le géant de l'escorte girls et boys  </a></li>
+        <li><a href="#">{{ __("Viens-Yamo The giant of escort girls and boys")}}  </a></li>
 
       @if(isset($numberAdsByTowns))
 
@@ -357,7 +358,7 @@ nav .fa{
 
 	<div class="hide-ipad ml-auto ms-auto">
         <a href="{{ route('adstown') }}" data-ppt-btn=""
-		class=" btn-rounded-25 text-600" data-ppt-btn2-txt="" style="background-color: #ED5858;color:white">Autres Villes</a>
+		class=" btn-rounded-25 text-600" data-ppt-btn2-txt="" style="background-color: #ED5858;color:white">{{ __("Other cities")}}</a>
                       </div>
     </nav>
   </div>

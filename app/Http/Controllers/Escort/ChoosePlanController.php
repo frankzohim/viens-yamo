@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Session;
 
 class ChoosePlanController extends Controller
 {
-    public function PlanShow($id){
+    public function PlanShow($id, $adsId){
 
+        //dd($id, $adsId);
         $membership=(new MemberShipService())->show($id);
-
-
-
-        return back()->with('membership',$membership);
+        $membershipJson =  $membership->id.'.'.$membership->membership_name.'.'.$membership->price;
+        return redirect()->route('membership.display', ['adsId'=>$adsId, 'membership'=>$membershipJson]);
     }
 
     public function PlanPremium(){

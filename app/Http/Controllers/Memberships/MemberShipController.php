@@ -8,10 +8,11 @@ use App\Services\Api\MemberShip\MemberShipService;
 
 class MemberShipController extends Controller
 {
-    public function display($id){
+    public function display($id, $membership){
+        //dd('Hello');
         $memberships = (new MemberShipService)->MemberShip();
 
-        return view('membership.index', compact('memberships','id'));
+        return view('membership.index', compact('memberships','id', 'membership'));
     }
 
     public function showPremium(){

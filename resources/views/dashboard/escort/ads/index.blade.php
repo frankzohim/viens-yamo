@@ -69,15 +69,14 @@
                         <i class="fa fa-trash font-danger"></i>
                       </a>
                        &nbsp;
-                       
                       @if($ad['isSubscribe']===0)
-                        <a href="{{ route('membership.display',['adsId' => $ad['id']])  }}" class="tooltip1">
+                        <a href="{{ route('membership.display',['adsId' => $ad['id'], 'membership' =>'null'])  }}" class="tooltip1">
                           <span class="tooltiptext1">Booster</span>
                             <i class="fa fa-plane font-danger"></i>
                         </a>
 
                       @else
-                        <a href="{{ route('membership.display',['adsId' => $ad['id']])  }}" class="tooltip1">
+                        <a href="{{ route('membership.display',['adsId' => $ad['id'], 'membership' =>'null'])  }}" class="tooltip1">
                             <span class="tooltiptext1">Boostée</span>
                             <i class="fa fa-check font-danger"></i>
                         </a>

@@ -131,7 +131,7 @@ class AdsController extends Controller
 
                     Mail::to('temerprodesign@yahoo.fr')
                     ->send(new Ad($ad));
-                    return to_route('membership.display', ['adsId'=>$id]);
+                    return to_route('membership.display', ['adsId'=>$id, 'membership' =>'null']);
 
 
                 }else{
@@ -199,7 +199,7 @@ class AdsController extends Controller
 
                     Mail::to('temerprodesign@yahoo.fr')
                     ->send(new Ad($ad));
-                    return to_route('membership.display', ['adsId'=>$id]);
+                    return to_route('membership.display', ['adsId'=>$id, 'membership'=>'null']);
 
 
                 }else{

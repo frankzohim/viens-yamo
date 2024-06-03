@@ -246,13 +246,13 @@ Route::middleware(['escort'])->group(function () {
 
     Route::post('init/payment',[PurchaseMomoController::class,'initPayment'])->name('initPayment');
     Route::post('init/pay/with-coolpay',[PurchaseMomoController::class,'initPayWithCoolPay'])->name('init-cool-pay');
-    Route::get('choosePlan/{id}',[ChoosePlanController::class,'PlanShow'])->name('show.plan');
+    Route::get('choosePlan/{id}/{adsId}',[ChoosePlanController::class,'PlanShow'])->name('show.plan');
 
 
 
 
     //Memberships GROUP URL
-    Route::get('/memberships/{adsId}',[MemberShipController::class, 'display'])->name('membership.display');
+    Route::get('/memberships/{adsId}/{membership}',[MemberShipController::class, 'display'])->name('membership.display');
     Route::get('/memberships',[MemberShipController::class, 'index'])->name('membership.index');
 
     //Annoucements GROUP URL
@@ -272,7 +272,7 @@ Route::middleware(['escort'])->group(function () {
 
     Route::get('/mes-abonnements',[CurrentUserPurchaseController::class,'currentPurchase'])->name('my-purchase');
         //Memberships GROUP URL
-    Route::get('/memberships/{adsId}',[MemberShipController::class, 'display'])->name('membership.display');
+    // Route::get('/memberships/{adsId}',[MemberShipController::class, 'display'])->name('membership.display');
     Route::get('/step-one',[StepOneController::class,'stepOne'])->name('step-one');
     Route::post('/step-one-store',[StepOneController::class,'stepOneStore'])->name('step-one-store');
     Route::get('/step-two',[StepTwoController::class,'stepTwo'])->name('step-two');
