@@ -1,5 +1,5 @@
 @extends('layouts.Frontend.master')
-@section('title', __('Viens Yamo'))
+@section('title', 'Viens Yamo')
 @section("meta_title","Annonces d'escortes girls au cameroun")
 @section('meta_description',"Viens-Yamo Le géant de l'escorte girls et boys")
 @section("meta_image",asset('assets/meta/home.png'))
@@ -41,7 +41,7 @@
               @foreach ($banners as $banner)
                   @if($banner['position'] == 'header_promo' && $banner['status'] == 1)
                       <a href='javascript:void(0)' class='samplebanneronly'>
-                        <img src='{{ route('display.banner',['id'=>$banner['id']] )}}'
+                        <img src="{{ route('display.banner',['id'=>$banner['id']] )}}"
                         class='img-fluid' alt='sample banner'>
                       </a>
                   @endif
@@ -56,12 +56,14 @@
           <ul class="h-100 list-unstyled d-flex align-items-center justify-content-between pl-0">
 
           <li><a href="{{ route('db.escort.index') }}" class="">
-                <i class="fa fa-user" style="color: #ED5858;"></i>Mon Compte</a></li>
+                <i class="fa fa-user" style="color: #ED5858;"></i>{{ __("My Account")}}</a></li>
 
           <li><a href="{{ route('ads.create') }}" class="">
-                <i class="fal fa-plus-circle" style="color: #ED5858;"></i> Créer une annonce</a></li>
+                <i class="fal fa-plus-circle" style="color: #ED5858;"></i> {{ __("Create ad")}}</a></li>
           <li><a href="{{ route('ads.list') }}" class="">
-                <i class="fal fa-sparkles" style="color: #ED5858;"></i> Annonces</a></li>
+                <i class="fal fa-sparkles" style="color: #ED5858;"></i>{{ __("Ads")}} </a></li>
+
+       
 
 
 
@@ -76,7 +78,7 @@
 			<input type="text" class="form-control shadow-sm"
 			required name="s" data-type="text" data-type="text"
 			data-key="keyword" autocomplete="on"  data-formatted-text="Keyword"
-			placeholder="Rechercher.." value="" style="height:50px;">
+			placeholder="{{ __('Search')}}.." value="" style="height:50px;">
 
 
 			  <button class="btn iconbit" type="submit"
@@ -100,7 +102,7 @@
             <div class>
       <a href="https://api.whatsapp.com/send?phone=18328820957&text=Hello j'ai besoin d'aide pour m'inscrire"
       target="_blank" class="btn-md  mt-2" data-ppt-btn="" style="background-color: #F44336; color:white" data-ppt-btn-link=""
-                 class="btn-system">Besoin d'aide pour s'inscrire?cliquez ici </a>
+                 class="btn-system">{{ __("Need help registering? click here")}} </a>
 
             </div>
             <div>
@@ -116,7 +118,7 @@
  <div class="show-mobile mb-3 mt-2">
   <div class="container ">
 
-        <a href="#">Viens-Yamo Le géant de l'escorte girls et boys  </a>
+        <a href="#">{{ __("Viens-Yamo The giant of escort girls and boys")}}  </a>
 
     @if(isset($numberAdsByTowns))
 
@@ -173,18 +175,18 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
             21+
           </div>
           <div class="row justify-content-center" style="padding-left: 20px; padding-right:20px">
-               <span class="text-white"> Veuillez confirmer que vous avez plus de 21 ans ou quitter le site Web. <br>
-            Ce site utilise des cookies uniquement pour analyser le trafic</span>
+               <span class="text-white">{{ __("Viens-Yamo The giant of escort girls and boys")}}  <br>
+            {{ __("This site uses cookies only to analyze traffic")}}</span>
           </div>
           <hr>
           <div class="row justify-content-center" >
              <a href="http://www.google.com">
               <button type="button" class="btn btn-secondary">
-                <i class="fa fa-arrow-left"></i>&nbsp; QUITTER</button>
+                <i class="fa fa-arrow-left"></i>&nbsp; {{ __("LEAVE")}}</button>
              </a> &nbsp;
         <a href="#">
           <button type="button" class="btn btn-primary" id="button-session" data-bs-dismiss="modal">
-          <i class="fa fa-check" aria-hidden="true"></i>&nbsp; J'AI AU MOINS 21 ANS</button>
+          <i class="fa fa-check" aria-hidden="true"></i>&nbsp; {{ __("I AM AT LEAST 21 YEARS OLD")}}</button>
 
         </a>
           </div>
@@ -212,7 +214,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
                             <div class="col-lg-12 text-light">
-                                <h1 data-ppt-title="">Annonces ULTRA VIP
+                                <h1 data-ppt-title=""> {{ __("ULTRA VIP Ads")}} 
                                 </h1> <br/>
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
@@ -268,7 +270,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
-                                                                                            <div class="button-new" style="background-color: #DA9DDC">{{ $vipAds[$i]['age'] }} Ans</div>
+                                                                                            <div class="button-new" style="background-color: #DA9DDC">{{ $vipAds[$i]['age'] }} {{ __("Years")}}</div>
 
                                                                                             </div>
                                                                                             <a href="{{ route('ads.details', ['username' => $vipAds[$i]['user']['username'],'slug'=>$vipAds[$i]['slug']]) }}">
@@ -297,7 +299,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                                 <span class="fal fa fa-star" style="color:#000000"> </span> {{ ucfirst($vipAds[$i]['town']['town_name']) }}   </div>
 																								@if($vipAds[$i]['user']['isVerify']== 1)
 																								<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-																								<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié  </div>
+																								<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}   </div>
 																								@endif
 
                                                                                             </div>
@@ -327,7 +329,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                                         <div class="buttons-wrap">
 
                                                                                                             <div class="button-new"
-                                                                                                            style="background-color: #DA9DDC; font-size:10px;">{{ $vipAds[$i]['age'] }} Ans</div>
+                                                                                                            style="background-color: #DA9DDC; font-size:10px;">{{ $vipAds[$i]['age'] }} {{ __("Years")}} </div>
 
                                                                                                         </div>
                                                                                                         <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -345,7 +347,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 																										@if($vipAds[$i]['user']['isVerify']== 1)
 																										<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-																										<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié  </div>
+																										<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}   </div>
 																										@endif
 
 
@@ -382,7 +384,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
-                                                                                          <div class="button-new" style="background-color: #DA9DDC">{{ $vipAds[$i+1]['age'] }} Ans</div>
+                                                                                          <div class="button-new" style="background-color: #DA9DDC">{{ $vipAds[$i+1]['age'] }} {{ __("Years")}} </div>
 
                                                                                           </div>
                                                                                           <a href="{{ route('ads.details', ['username' => $vipAds[$i+1]['user']['username'],'slug'=>$vipAds[$i+1]['slug']]) }}">
@@ -412,7 +414,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                               <span class="fal fa fa-star" style="color:#000000"> </span> {{ ucfirst($vipAds[$i+1]['town']['town_name']) }}   </div>
 																							  @if($vipAds[$i+1]['user']['isVerify']== 1)
 																								<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-																								<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié  </div>
+																								<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}   </div>
 																								@endif
 
                                                                                           </div>
@@ -443,7 +445,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                                       <div class="buttons-wrap">
 
                                                                                                           <div class="button-new"
-                                                                                                          style="background-color: #DA9DDC; font-size:10px;">{{ $vipAds[$i+1]['age'] }} Ans</div>
+                                                                                                          style="background-color: #DA9DDC; font-size:10px;">{{ $vipAds[$i+1]['age'] }} {{ __("Years")}}</div>
 
                                                                                                       </div>
                                                                                                       <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -460,7 +462,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                                       <span class="fal fa fa-star" style="color:#000000"> </span> ULTRA </br> VIP  </div>
 																								@if($vipAds[$i+1]['user']['isVerify']== 1)
 																								<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-																								<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié  </div>
+																								<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}  </div>
 																								@endif
 
                                                                                                   </div>
@@ -554,9 +556,9 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="row">
           <div class="col-lg-12">
         <div class="d-flex justify-content-between">
-          <h2 class="mb-1" data-ppt-title="">Annonces GOLD</h2>
+          <h2 class="mb-1" data-ppt-title="">{{ __("GOLD Ads")}}</h2>
           <div>
-                        <a href="{{ route('ads.list', ['membership' => 2]) }}" data-ppt-btn="" data-ppt-btn-link="" class="btn-system">Tout Voir</a>
+                        <a href="{{ route('ads.list', ['membership' => 2]) }}" data-ppt-btn="" data-ppt-btn-link="" class="btn-system">{{ __("View All")}}</a>
                       </div>
         </div>
       </div>
@@ -645,7 +647,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 							@if($goldAds[$i]['user']['isVerify']== 1)
 									<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 									</div>
 							@endif
 
@@ -676,7 +678,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="buttons-wrap">
 
                                         <div class="button-new"
-                                        style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i]['age'] }} Ans</div>
+                                        style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i]['age'] }} {{ __("Years")}}</div>
 
                                     </div>
                                     <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -694,7 +696,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 										@if($goldAds[$i]['user']['isVerify']== 1)
 											<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-												<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié  </div>
+												<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}  </div>
 										@endif
 
                                     </div>
@@ -753,7 +755,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 							@if($goldAds[$i+1]['user']['isVerify']== 1)
 									<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 									</div>
 							@endif
 
@@ -785,7 +787,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="buttons-wrap">
 
                                         <div class="button-new"
-                                        style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i+1]['age'] }} Ans</div>
+                                        style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i+1]['age'] }} {{ __("Years")}}</div>
 
                                     </div>
                                     <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -803,7 +805,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 										@if($goldAds[$i+1]['user']['isVerify']== 1)
 											<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-													<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+													<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 											</div>
 									    @endif
                                     </div>
@@ -865,7 +867,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 								@if($goldAds[$i+2]['user']['isVerify']== 1)
 									<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 									</div>
 							@endif
 
@@ -898,7 +900,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="buttons-wrap">
 
                                             <div class="button-new"
-                                            style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i+2]['age'] }} Ans</div>
+                                            style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i+2]['age'] }} {{ __("Years")}}</div>
 
                                         </div>
                                         <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -916,7 +918,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 											@if($goldAds[$i+2]['user']['isVerify']== 1)
 													<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-															<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+															<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 													</div>
 											@endif
                                         </div>
@@ -979,7 +981,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 							@if($goldAds[$i+3]['user']['isVerify']== 1)
 									<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 									</div>
 							@endif
 
@@ -1011,7 +1013,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="buttons-wrap">
 
                                         <div class="button-new"
-                                        style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i+3]['age'] }} Ans</div>
+                                        style="background-color: #DA9DDC; font-size:10px;">{{ $goldAds[$i+3]['age'] }} {{ __("Years")}}</div>
 
                                     </div>
                                     <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -1029,7 +1031,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 										@if($goldAds[$i+3]['user']['isVerify']== 1)
 												<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-														<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+														<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 												</div>
 										@endif
 
@@ -1091,17 +1093,16 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="col-md-11 col-lg-11 col-xl-11 mx-auto text-center">
 
               <h2 class="fs-lg mb-3" data-ppt-title="" underline_color="#000"><span class="ppt-headline">
-                Avertissement<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+                 {{ __("Warning")}}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
                   <path style="stroke:#000" d="M9.3,127.3c49.3-3,150.7-7.6,199.7-7.4c121.9,0.4,189.9,0.4,282.3,7.2C380.1,129.6,181.2,130.6,70,139 c82.6-2.9,254.2-1,335.9,1.3c-56,1.4-137.2-0.3-197.1,9"/></svg>
 
       </span></h2>
 
               <p class="lead" data-ppt-subtitle="">
-                Les publications sur ce site sont faites de façon décentralisée, et automatique par toutes personnes voulant vendre ses services pour adultes.
-                En utilisant le site vous acceptez que le propriétaire du site soit décliné de toutes éventuelles reponsabilités
-                quelque soit la nature. Si vous n'êtes pas  d'accord avec certains contenus de ce site veuillez le quitter en urgence</p>
+                {{ __("Publications on this site are made in a decentralized manner, and automatically by anyone wanting to sell their services for adults.By using the site you accept that the owner of the site is disclaimed from all possible responsibilities.whatever the nature. If you do not agree with certain contents of this site, please leave it urgently")}}
+                </p>
 
-                      <a href="http://google.com" data-ppt-btn="" class="btn-system rounded">Quitter</a>
+                      <a href="http://google.com" data-ppt-btn="" class="btn-system rounded"> {{ __("Leave Now")}}</a>
 
             </div>
 
@@ -1118,9 +1119,9 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="row">
           <div class="col-lg-12">
         <div class="d-flex justify-content-between">
-          <h2 class="mb-5" data-ppt-title="">Annonces En Vedettes</h2>
+          <h2 class="mb-5" data-ppt-title="">{{ __("Featured Ads")}}</h2>
           <div>
-                        <a href="{{ route('ads.list') }}" data-ppt-btn="" data-ppt-btn-link="" class="btn-system">Voir Plus</a>
+                        <a href="{{ route('ads.list') }}" data-ppt-btn="" data-ppt-btn-link="" class="btn-system">{{ __("See All")}}</a>
                       </div>
         </div>
       </div>
@@ -1142,7 +1143,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
-		<div class="button-new" style="background-color: #DA9DDC">{{ $ad['age'] }} Ans</div>
+		<div class="button-new" style="background-color: #DA9DDC">{{ $ad['age'] }} {{ __("Years")}}</div>
 
 		</div>
         <a href="{{ route('ads.details', ['username' => $ad['user']['username'],'slug'=>$ad['slug']]) }}">
@@ -1178,7 +1179,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                         @endif
 			@if($ad['user']['isVerify']== 1)
 									<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 									</div>
 							@endif
 
@@ -1206,8 +1207,8 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
               </li>
 
 					</ul>
-					<span style="font-weight:bold">Client accepté :</span> {{ $ad['accepted'] }} <br>
-					<span style="font-weight:bold">Lieu :</span> {{ $ad['location'] }}
+					<span style="font-weight:bold">{{ __("Accepted Customer")}} :</span> {{ $ad['accepted'] }} <br>
+					<span style="font-weight:bold">{{ __("Location")}} :</span> {{ $ad['location'] }}
 
 				</nav>
 
@@ -1245,7 +1246,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="buttons-wrap">
 
 						<div class="button-new"
-						style="background-color: #DA9DDC; font-size:10px;">{{ $ad['age'] }} Ans</div>
+						style="background-color: #DA9DDC; font-size:10px;">{{ $ad['age'] }} {{ __("Years")}}</div>
 
 					</div>
 					<div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -1269,7 +1270,7 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 						@if($ad['user']['isVerify']== 1)
 									<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+											<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 									</div>
 							@endif
 
@@ -1315,16 +1316,12 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
       </div>
       <div class="col-md-6 pl-xl-5 ps-xl-5">
 
-        <h2 data-ppt-title="">Nous vous mettons en contact avec des filles et des gars à proximité !</h2>
+        <h2 data-ppt-title="">{{ __("We connect you with girls and guys nearby!")}}</h2>
 
-        <p class="my-3" data-ppt-subtitle="">Que vous recherchiez un compagnon de soirée captivant,
-          un rendez-vous charmant pour un événement spécial, une masseuse qualifiée, ou si vous
-          souhaitez passez des moments très excitants et agréables notre annuaires d'escorte vous
-          propose une multitude d'options pour répondre à vos envies.
-          Votre prochaine expérience mémorable n'est qu'à quelques clics.</p>
+        <p class="my-3" data-ppt-subtitle="">{{ __("Whether you're looking for a captivating evening companion, a lovely date for a special event, a qualified masseuse, or if you want to spend very exciting and pleasant moments our escort directories you offers a multitude of options to meet your desires. Your next memorable experience is just a few clicks away.")}}</p>
 
 
-                <a href="{{ route('ads.list') }}" class="btn-lg btn-primary  mt-2" data-ppt-btn="" data-ppt-btn-txt="">Annonces</a>
+                <a href="{{ route('ads.list') }}" class="btn-lg btn-primary  mt-2" data-ppt-btn="" data-ppt-btn-txt=""> {{ __("Ads")}}</a>
 
 
       </div>
@@ -1415,7 +1412,7 @@ scrollTop();
 </script>
 </div>
 
-
+  
 <section data-ppt-blockid='text122' data-ppt-blocktype='text' data-ppt-section="" class="bg-primary section-40 hide-mobile">
   <div class="container">
     <div class="row align-items-center  text-center text-md-right">
@@ -1423,14 +1420,14 @@ scrollTop();
 
         <div class="text-md-left">
 
-          <h2 class="text-light m-0" data-ppt-title="">Créez votre compte gratuit aujourd'hui !</h2>
+          <h2 class="text-light m-0" data-ppt-title="">{{ __("Create your free account today !")}}</h2>
 
        </div>
       </div>
       <div class="col-10 mx-auto col-md-4 text-center text-md-right">
 
         <a href="/register" class="btn-rounded-25  font- btn-xl btn-light  mt-0  btn-icon icon-after" data-ppt-btn="" data-ppt-btn-link="">
-          <span data-ppt-btn-txt="">Inscription</span> <i class="fa fa-long-arrow-alt-right">&nbsp;</i> </a>
+          <span data-ppt-btn-txt="">{{ __("Register")}}</span> <i class="fa fa-long-arrow-alt-right">&nbsp;</i> </a>
 
       </div>
     </div>
@@ -1443,7 +1440,7 @@ scrollTop();
               @foreach ($banners as $banner)
                   @if($banner['position'] == 'home_bottom' && $banner['status'] == 1)
                       <a href='javascript:void(0)' class='samplebanneronly'>
-                        <img src='{{ route('display.banner',['id'=>$banner['id']] )}}'
+                        <img src="{{ route('display.banner',['id'=>$banner['id']] )}}"
                         class='img-fluid' alt='sample banner'>
                       </a>
                   @endif

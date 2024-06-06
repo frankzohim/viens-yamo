@@ -36,15 +36,18 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <main id="page-content-wrapper" class="with-mobilemenu">
 
 
+    @if($membership != 'null')
 
-
-    @if(session('membership'))
+    @php
+     $data = explode(".", $membership);
+    @endphp
+    
     <div class="ppt-modal-wrap show modal-payment modal-bottom-rightxxx"><div class="ppt-modal-wrap-overlay"></div><div class="ppt-modal-item ppt-animate-bouncein bg-white w-500 ppt-modal-shadow"><div class="ppt-modal-container"><div class="card-popup large">
         <div class="bg-primary pt-3">
             <div class="card-popup-content">
 
-                <h3 style="color:white;font-size:20px">{{ Session::get('membership')[0]['price'] }} XAF</h3>
-                <div class="text-truncate mt-2 opacity-8 text-600">Abonnement: {{ Session::get('membership')[0]['membership_name'] }}</div>
+                <h3 style="color:white;font-size:20px">{{ $data[2] }} XAF</h3>
+                <div class="text-truncate mt-2 opacity-8 text-600">Abonnement: {{ $data[1] }}</div>
 
 
             </div>
@@ -70,7 +73,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-        @if($user->balance >= Session::get('membership')[0]['price'])
+        @if($user->balance >= $data[2] )
             <div class="text-decoration-none text-dark link-dark btn-block border shadow-sm p-3 rounded mb-4">
                 <div class="d-flex payment-%name%">
                     <div style="width:120px; height:40px; font-size: 30px;" class="mr-4 rounded overflow-hidden position-relative">
@@ -115,8 +118,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <form method="get" style="margin:0px !important;" action="{{route('subscribe-premium')}}" name="checkout_paypal1">
             @csrf
-            <input type="hidden" name="price" value="{{ Session::get('membership')[0]['price'] }}">
-            <input type="hidden" name="membership_id" id="credit_total" value="{{ Session::get('membership')[0]['id'] }}">
+            <input type="hidden" name="price" value="{{ $data[2]  }}">
+            <input type="hidden" name="membership_id" id="credit_total" value="{{ $data[0] }}">
 
 
 
@@ -156,8 +159,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
                         <form method="post" style="margin:0px !important;" action="{{route('init-cool-pay-plan')}}" name="checkout_paypal1">
                             @csrf
-                            <input type="hidden" name="price" value="{{ Session::get('membership')[0]['price'] }}">
-                            <input type="hidden" name="membership_id" id="credit_total" value="{{ Session::get('membership')[0]['id'] }}">
+                            <input type="hidden" name="price" value="{{ $data[2] }}">
+                            <input type="hidden" name="membership_id" id="credit_total" value="{{ $data[0] }}">
 
 
 

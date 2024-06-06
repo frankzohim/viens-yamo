@@ -34,7 +34,7 @@
 
 </div>
 </div>
-En utilisant le site vous acceptez que le propriétaire du site soit décliné de toutes éventuelles reponsabilités quelque soit la nature.
+{{ __("By using the site you accept that the owner of the site is declined from any possible responsibilities whatever their nature")}}
 <div class="footer-txt-light" style="background:#000000!important;">
 
 
@@ -49,24 +49,21 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
             <img src="{{ asset('assets/images/logo-vy.png') }}" alt="">
         </div>
 
-        
-
         </div>
 
         <div class="lh-30 mobile-mb-2" data-ppt-footerdesc="">
-          En utilisant le site vous acceptez que le propriétaire du site soit décliné de toutes éventuelles
-          reponsabilités quelque soit la nature. </div>
+          {{ __("By using the site you accept that the owner of the site is declined from any possible responsibilities whatever their nature")}} </div>
 
       </div>
 
       <div class="col-6 col-md-3 col-xl-2 text-center text-md-left mobile-mb-2">
 
-        <div class="fs-5 mb-2 text-600" data-ppt-footer-menutitle1="">Liens Utiles</div>
+        <div class="fs-5 mb-2 text-600" data-ppt-footer-menutitle1="">{{ __("Useful Links")}}</div>
         <div class="lh-30">        <ul>
-                <li><a href="{{ route('cgu') }}">CGU</a></li>
-                <li><a href="{{ route('help') }}">Aide</a></li>
-                <li><a href="{{ route('faq') }}">Faqs</a></li>
-                <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
+                <li><a href="{{ route('cgu') }}">{{ __("CGU")}}</a></li>
+                <li><a href="{{ route('help') }}">{{ __("Help")}}</a></li>
+                <li><a href="{{ route('faq') }}">{{ __("Faqs")}}</a></li>
+                <li><a href="{{ route('contact') }}">{{ __("Contact us")}}</a></li>
 
 
                 </ul>
@@ -76,12 +73,12 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
 
       <div class="col-6 col-md-3 col-xl-2 text-center text-md-left mobile-mb-2">
 
-        <div class="fs-5 mb-2 text-600" data-ppt-footer-menutitle2="">Annonces</div>
+        <div class="fs-5 mb-2 text-600" data-ppt-footer-menutitle2="">{{ __("Ads")}}</div>
         <div class="lh-30">        <ul>
-                <li><a href="{{ route('ads.category', ['id'=>'2']) }}">Massage</a></li>
-                <li><a href="{{ route('ads.category', ['id'=>'3']) }}">Produits Adultes</a></li>
-                <li><a href="{{ route('ads.category', ['id'=>'1']) }}">Rencontres - Escortes</a></li>
-                <li><a href="{{ route('ads.list') }}">Toutes les annonces</a></li>
+                <li><a href="{{ route('ads.category', ['id'=>'2']) }}">{{ __("Massage")}}</a></li>
+                <li><a href="{{ route('ads.category', ['id'=>'3']) }}">{{ __("Adult Products")}}</a></li>
+                <li><a href="{{ route('ads.category', ['id'=>'1']) }}">{{ __("Dating - Escorts")}}</a></li>
+                <li><a href="{{ route('ads.list') }}">{{ __("All ads")}}</a></li>
                 </ul>
         </div>
 
@@ -90,15 +87,15 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
 
       <div class="col-md-4">
 
-        <div class="fs-5 mb-2 text-600">Rejoignez notre Communauté</div>
-        <p class="opacity-8 mb-3">Nous écrivons rarement, mais seulement le meilleur contenu.</p>
+        <div class="fs-5 mb-2 text-600">{{ __("Join our Community")}}</div>
+        <p class="opacity-8 mb-3">{{ __("We rarely write, but only the best content.")}}</p>
 
 
 <a href="https://chat.whatsapp.com/DCyINA4wsdyIaDeJ7MYyMV" target="_blank">
 
 
 
-<button type="submit" class="btn" style="background-color: #ED5858;color:white">Rejoindre</button></a>
+<button type="submit" class="btn" style="background-color: #ED5858;color:white">{{ __("Join")}}</button></a>
 
  <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -130,7 +127,7 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
   </div>
 </div>
         <div class="small opacity-8 mt-4">
-          Nous ne partagerons jamais vos coordonnées. <a class="opacity-8" href="#"></a>
+          {{ __("We will never share your contact details.")}} <a class="opacity-8" href="#"></a>
         </div>
 
       </div>
@@ -201,26 +198,26 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
 
 
 	<li><a href="/" class="">
-        <i class="fal fa-house"></i> Accueil</a></li>
+        <i class="fal fa-house"></i> {{ __("Home")}} </a></li>
 
       @if (!isset($user))
          <li> <a href="{{ route('db.escort.index') }}">
            <i  class="fal fa-user"></i>
-          Mon Compte</a> </li>
+          {{ __("My Account")}} </a> </li>
       @endif
         @if (isset($user))
         @if($user->role_id==2)
         <li> <a href="{{ route('db.escort.index') }}">
            <i  class="fal fa-user"></i>
-          Mon Compte</a> </li>
+         {{ __("My Account")}}</a> </li>
     @endif
     @if($user->role_id==1)
         <li> <a href="{{ route('admin.dashboard') }}">
-           <i  class="fal fa-user"></i> Mon Compte</a> </li>
+           <i  class="fal fa-user"></i> {{ __("My Account")}}</a> </li>
     @endif
     @if($user->role_id==3)
         <li> <a href="{{ route('db.customer.index') }}">
-           <i  class="fal fa-user"></i>Mon Compte</a> </li>
+           <i  class="fal fa-user"></i>{{ __("My Account")}} </a> </li>
     @endif
         @endif
 
@@ -237,11 +234,11 @@ En utilisant le site vous acceptez que le propriétaire du site soit décliné d
 
 
 		<li><a href="#" class="" data-toggle="modal" data-target="#exampleModal">
-        <i  class="fal fa-search"></i> Chercher</a></li>
+        <i  class="fal fa-search"></i> {{ __("Search")}}</a></li>
 
-
+  
 	<li><a href="{{ route('ads.list') }}" class="">
-        <i class="fal fa-sparkles"></i> Annonces</a></li>
+        <i class="fal fa-sparkles"></i> {{ __("Ads")}} </a></li>
 
 
 

@@ -41,9 +41,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
     @if($membership != 'null')
+
     @php
      $data = explode(".", $membership);
     @endphp
+    
     <div class="ppt-modal-wrap show modal-payment modal-bottom-rightxxx"><div class="ppt-modal-wrap-overlay"></div><div class="ppt-modal-item ppt-animate-bouncein bg-white w-500 ppt-modal-shadow"><div class="ppt-modal-container"><div class="card-popup large">
         <div class="bg-primary pt-3">
             <div class="card-popup-content">

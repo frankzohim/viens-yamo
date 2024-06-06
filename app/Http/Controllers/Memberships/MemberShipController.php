@@ -15,10 +15,12 @@ class MemberShipController extends Controller
         return view('membership.index', compact('memberships','id', 'membership'));
     }
 
-    public function showPremium(){
+    public function showPremium($membership){
+
+        //dd($membership);
         $memberships = (new MemberShipService)->showPremium();
 
-        return view('user.check-plan', compact('memberships'));
+        return view('user.check-plan', compact('memberships', 'membership'));
     }
 
      public function index(){

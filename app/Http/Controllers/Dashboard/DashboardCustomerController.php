@@ -28,7 +28,9 @@ class DashboardCustomerController extends Controller
                      
                     Session::put('membershipCheck', 1);
                     Session::save();
-                    return to_route('upgrade-plan');
+
+                    //return to_route('upgrade-plan');
+                    return redirect()->route('upgrade-plan', ['membership'=>'null']);
                 } 
                     
                 //Rendering customer dashboard

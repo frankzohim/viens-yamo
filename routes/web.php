@@ -294,7 +294,7 @@ Route::middleware(['escort'])->group(function () {
 
 
 //Customer group route
-Route::get('/upgrade-plan',[MemberShipController::class,'showPremium'])->name('upgrade-plan')->middleware('customer');
+Route::get('/upgrade-plan/{membership}',[MemberShipController::class,'showPremium'])->name('upgrade-plan')->middleware('customer');
 Route::post('/upgrade-plan/coolpay',[PurchaseMomoController::class,'initPayWithCoolPayPlan'])->name('init-cool-pay-plan')->middleware('customer');
 Route::middleware(['customer'])->prefix('customer')->group(function () {
 

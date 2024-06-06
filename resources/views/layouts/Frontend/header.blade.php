@@ -97,7 +97,21 @@ nav .fa{
             <i class="fa fa-bars" onclick="hideMenu()"></i>
             <ul>
 
-                  <li><a href="{{ route('homepage') }}"> {{ __("HOME")}}  </a></li>
+                  
+                  <li>
+                     <a  href="{{ route('lang', ['locale' =>'fr']) }}">
+                          <img src="{{asset('assets/images/lang/fr.png')}}" class="float-right " width="25px" >
+                                      Français
+                      </a>
+                  </li>
+                  <li>
+                    <a  href="{{ route('lang', ['locale' =>'en']) }}">
+                          <img src="{{asset('assets/images/lang/en.png')}}" class="float-right " width="25px" >
+                                      English
+                    </a>
+                  </li>
+                    
+                  <li><a href="{{ route('homepage') }}"> {{ __("HOME")}}  </a></li>               
                   <li><a href="{{ route('ads.list') }}"> {{ __("ADS")}}  </a></li>
                   <li><a href="{{ route('escort.list') }}">  {{ __("ESCORTS")}}  </a></li>
                    @if(!isset($user))
@@ -216,7 +230,7 @@ nav .fa{
                   <input type="text" class="form-control  customfilter typeahead shadow-sm"
                    required name="s" data-type="text"
                   data-key="keyword" autocomplete="on"  data-formatted-text="Keyword"
-                  placeholder="Rechercher.." value=""
+                  placeholder="{{ __('Search')}}..." value=""
                   style="height:36px;  padding-left: 10px; font-size: 16px;border: 1px solid rgb(204, 204, 204); border-radius: 18px; box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);">
 
 
@@ -277,7 +291,7 @@ nav .fa{
         @if(isset($user))
 
         @if($user->role_id==3 && $subscribeOrNot===0)
-        <li><a style="color:white;padding-top:12px;padding-bottom:12px" class="badge btn-danger" href="{{ route('upgrade-plan') }}"> Upgrade plan </a></li>
+        <li><a style="color:white;padding-top:12px;padding-bottom:12px" class="badge btn-danger" href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> Upgrade plan </a></li>
         @endif
 
     @endif
@@ -297,15 +311,36 @@ nav .fa{
 		 </nav>
      <div class="show-ipad show-mobile">
         <div class="d-flex">
+        
           <div class="ml-4  cursor">
                   <div ppt-icon-size="32" data-ppt-icon2="" onclick="showMenu()">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24"
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24"
                     stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                     d="M4 6h16M4 12h16M4 18h16"></path></svg> -->
+
+                      @php
+                      $locale = App::getLocale();
+                      if ($locale == 'en')
+                        $language = 'English';
+                      else
+                        $language = 'Français';
+                      
+                      @endphp
+                            
+                       
+
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                          <div class="p-2 bd-highlight"><img src="{{ asset('assets/images/lang/'.$locale.'.png') }}" width="20px"  ></div>
+
+                          <div class="p-2 bd-highlight">{{ $language }}</div>
+                        </div>
+                       
+                                
                   </div>
             </div>
+           
         </div>
-
+       
       </div>
 
                       <div class="hide-mobile" >
@@ -374,6 +409,11 @@ nav .fa{
       function hideMenu(){
         navLinks.classList.toggle("appeared");
       }
+
+      document.querySelector('.lang-selector').addEventListener("mouseenter", function(e) {  
+        e.preventDefault();
+        console.log('clicked lang'); // Prevents the default form submission behavior  
+}); 
   </script>
 
   </header>
