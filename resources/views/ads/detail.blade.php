@@ -263,7 +263,7 @@ opacity: 0.4
                                 @endif
 
                                 @if(empty($user))
-                                <a href="{{ route('upgrade-plan') }}" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
+                                <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
 
                                     <span><i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
                                     </a>
@@ -1371,7 +1371,7 @@ opacity: 0.4
                     <button class="btn btn-danger">Aller aux escortes Gold et Premium</button>
                 </div>
                 <div>
-                    <a href="{{ route('upgrade-plan') }}"> <button class="btn btn-primary">Souscrire Maintenant</button></a>
+                    <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button class="btn btn-primary">Souscrire Maintenant</button></a>
 
                 </div>
             </div>
@@ -1415,7 +1415,7 @@ opacity: 0.4
         Cette fonctionnalité est disponible uniquement pour les membres. Pour contacter une escorte ULTRA VIP,  vous devez tout d'abord créer votre compte 'membre', ensuite prendre un abonnement. Au cas contraire contactez plutôt les escortes Gold et Premium
       </div>
       <div class="modal-footer">
-	    <a href="{{ route('upgrade-plan') }}"> <button type="button" class="btn btn-primary">Souscrire Maintenant</button></a>
+	    <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button type="button" class="btn btn-primary">Souscrire Maintenant</button></a>
         <a href="{{ route('ads.nonvip') }}"> <button type="button" class="btn btn-secondary">Voir Non VIP</button> </a>
 
       </div>
@@ -1464,7 +1464,7 @@ opacity: 0.4
                         <button class="btn btn-danger">Aller aux escortes Gold et Premium</button>
                     </div>
                     <div>
-                        <a href="{{ route('upgrade-plan') }}"> <button class="btn btn-primary">Souscrire Maintenant</button></a>
+                        <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button class="btn btn-primary">Souscrire Maintenant</button></a>
 
                     </div>
                 </div>

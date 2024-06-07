@@ -16,6 +16,8 @@
   text-align: right;
 }
 
+  
+
 .nav-links ul li {
   list-style: none;
   display: inline-block;
@@ -23,6 +25,8 @@
   position: relative;
   color: white;
 }
+
+
 
 .nav-links ul li a {
   color: white;
@@ -65,6 +69,18 @@ nav .fa{
       transition: 1s;
   }
 
+  .nav-langs{
+     position: absolute;
+      background: #000000;
+      color: white;
+      width: 200px;
+      top: 0px;
+      left: -1000px;
+      text-align: left;
+      z-index: 20000000;
+      transition: 1s;
+  }
+
   .nav-links .fa{
     display: block;
     color: white;
@@ -96,20 +112,6 @@ nav .fa{
  <div class="nav-links show-mobile" id="navLinks">
             <i class="fa fa-bars" onclick="hideMenu()"></i>
             <ul>
-
-                  
-                  <li>
-                     <a  href="{{ route('lang', ['locale' =>'fr']) }}">
-                          <img src="{{asset('assets/images/lang/fr.png')}}" class="float-right " width="25px" >
-                                      Français
-                      </a>
-                  </li>
-                  <li>
-                    <a  href="{{ route('lang', ['locale' =>'en']) }}">
-                          <img src="{{asset('assets/images/lang/en.png')}}" class="float-right " width="25px" >
-                                      English
-                    </a>
-                  </li>
                     
                   <li><a href="{{ route('homepage') }}"> {{ __("HOME")}}  </a></li>               
                   <li><a href="{{ route('ads.list') }}"> {{ __("ADS")}}  </a></li>
@@ -131,6 +133,29 @@ nav .fa{
                   <li onclick="event.preventDefault(); document.getElementById('logout').submit();"><a href="#">  {{ __("LOGOUT")}} </a></li>
                   @endif
                   <li><a href="{{ route('contact') }}"> CONTACT</a></li>
+
+            </ul>
+
+        </div>
+		
+	 <div class="nav-links show-mobile" id="navLangs">
+      
+            <ul>
+
+                  
+                  <li>
+                     <a  href="{{ route('lang', ['locale' =>'fr']) }}">
+                          <img src="{{asset('assets/images/lang/fr.png')}}" class="float-right " width="25px" >
+                                      Français
+                      </a>
+                  </li>
+                  <li>
+                    <a  href="{{ route('lang', ['locale' =>'en']) }}">
+                          <img src="{{asset('assets/images/lang/en.png')}}" class="float-right " width="25px" >
+                                      English
+                    </a>
+                  </li>
+                    
 
             </ul>
 
@@ -313,26 +338,23 @@ nav .fa{
         <div class="d-flex">
         
           <div class="ml-4  cursor">
-                  <div ppt-icon-size="32" data-ppt-icon2="" onclick="showMenu()">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24"
+
+                   <div ppt-icon-size="32" data-ppt-icon2="" onclick="showMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24"
                     stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     d="M4 6h16M4 12h16M4 18h16"></path></svg> -->
+                     d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                  </div>
+
+                  <div ppt-icon-size="32" data-ppt-icon2="" onclick="showLang()">
 
                       @php
                       $locale = App::getLocale();
-                      if ($locale == 'en')
-                        $language = 'English';
-                      else
-                        $language = 'Français';
-                      
                       @endphp
-                            
-                       
 
                         <div class="d-flex flex-row bd-highlight mb-3">
                           <div class="p-2 bd-highlight"><img src="{{ asset('assets/images/lang/'.$locale.'.png') }}" width="20px"  ></div>
 
-                          <div class="p-2 bd-highlight">{{ $language }}</div>
+                     
                         </div>
                        
                                 
@@ -401,19 +423,24 @@ nav .fa{
       <script>
 
       var navLinks = document.getElementById('navLinks');
+      var navLangs = document.getElementById('navLangs');
 
       function showMenu(){
         navLinks.classList.toggle("appeared");
+      }
+
+       function showLang(){
+        navLangs.classList.toggle("appeared");
       }
 
       function hideMenu(){
         navLinks.classList.toggle("appeared");
       }
 
-      document.querySelector('.lang-selector').addEventListener("mouseenter", function(e) {  
-        e.preventDefault();
-        console.log('clicked lang'); // Prevents the default form submission behavior  
-}); 
+      function hideLang(){
+        navLangs.classList.toggle("appeared");
+      }
+     
   </script>
 
   </header>
