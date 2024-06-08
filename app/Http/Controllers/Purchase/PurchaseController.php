@@ -51,8 +51,9 @@ class PurchaseController extends Controller
 
     }
 
-    public function purchaseCredit(){
-        return view('purchase.purchase-credit');
+    public function purchaseCredit(?string $price = null){
+        //dd($price);
+        return view('purchase.purchase-credit', compact('price'));
     }
 
     public function purchaseInitCredit(Request $request){
@@ -65,7 +66,9 @@ class PurchaseController extends Controller
 
     public function choicePaymentType(Request $request){
 
-        return back()->with('price',$request->price);
+        //dd($request->price);
+        return redirect()->route('purchase.credit', ['price'=>$request->price]);
+        // return back()->with('price',$request->price);
     }
 
     public function purchaseStoreCredit($price){

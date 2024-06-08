@@ -7,12 +7,12 @@ Achat de credit
 @section("content")
 
 
-@if(session('price'))
+@if($price)
 <div class="ppt-modal-wrap show modal-payment modal-bottom-rightxxx"><div class="ppt-modal-wrap-overlay"></div><div class="ppt-modal-item ppt-animate-bouncein bg-white w-500 ppt-modal-shadow"><div class="ppt-modal-container"><div class="card-popup large">
     <div class="bg-primary pt-3">
         <div class="card-popup-content">
         <div class="text-white mt-3">
-            <strong class="">XAF{{ Session::get('price') }}</strong>
+            <strong class="">XAF{{ $price }}</strong>
             <div class="text-truncate mt-2 opacity-8 text-600">Achat de Credit</div>
 
         </div>
@@ -51,8 +51,7 @@ Achat de credit
 
     <form method="post" style="margin:0px !important;" action="{{route('purchase.init.credit')}}" name="checkout_paypal1">
         @csrf
-        <input type="hidden" name="price" value="{{ Session::get('price') }}">
-
+        <input type="hidden" name="price" value="{{ $price }}">
 
 
     <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile Money avec Cinetpay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
@@ -88,7 +87,7 @@ Achat de credit
 
                     <form method="post" style="margin:0px !important;" action="{{route('init-cool-pay.credit')}}" name="checkout_paypal1">
                         @csrf
-                        <input type="hidden" name="price" value="{{ Session::get('price') }}">
+                        <input type="hidden" name="price" value="{{ $price }}">
 
 
 

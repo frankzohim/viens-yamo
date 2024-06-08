@@ -26,6 +26,7 @@ use App\Http\Controllers\Listing\LocationController;
 use App\Http\Controllers\Escort\ChoosePlanController;
 use App\Http\Controllers\Purchase\PurchaseController;
 
+
 use App\Http\Controllers\ServerUnavailableController;
 use App\Http\Controllers\Admin\User\AddUserController;
 use App\Http\Controllers\User\SecureAccountController;
@@ -216,7 +217,7 @@ Route::middleware(['user'])->group(function () {
     Route::post("/answerStore",[SecureAccountController::class,'answerStore'])->name('answer-store');
     Route::get("/secure-account/questions",[SecureAccountController::class,'answerView'])->name('give-answer');
     Route::get('/secure-account',[SecureAccountController::class,'selectQuestion'])->name('selectQuestion');
-    Route::get('purchase/credit',[PurchaseController::class,'purchaseCredit'])->name('purchase.credit');
+    Route::get('purchase/credit/{price?}',[PurchaseController::class,'purchaseCredit'])->name('purchase.credit');
     Route::post('/logout',[LogoutController::class,'logout'])
     ->name('logout');
     Route::post('init/pay/with-coolpay/credits',[PurchaseMomoController::class,'initPayWithCoolPayCredit'])->name('init-cool-pay.credit');
@@ -286,7 +287,7 @@ Route::middleware(['escort'])->group(function () {
 
     //Route::get('congratulations/momo',[PurchaseController::class,'purchaseFinalMomo'])->name('congrats-purchase-momo');
 
-    Route::post('purchase/credit',[PurchaseController::class,'purchaseInitCredit'])->name('purchase.init.credit');
+    Route::post('purchase/credit/',[PurchaseController::class,'purchaseInitCredit'])->name('purchase.init.credit');
     Route::get('purchase/credit/successfully/{price}',[PurchaseController::class,'purchaseStoreCredit'])->name('purchase.store.credit');
 
 });
