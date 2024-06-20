@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
-    <title> Souscrire À  un Abonnement escort</title>
+    <title> {{ __("Subscribe to an Escort Plan")}} </title>
 
     <style>.preload-hide { display:none; }</style><meta name='robots' content='max-image-preview:large' />
 <style id='classic-theme-styles-inline-css' type='text/css'>
@@ -51,7 +51,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
             <div class="card-popup-content">
             <div class="text-white mt-3">
                 <strong class="h1 ppt-price ppt-price-set">XAF{{ $data[2] }} </strong>
-                <div class="text-truncate mt-2 opacity-8 text-600">Abonnement:{{ $data[1] }}</div>
+                <div class="text-truncate mt-2 opacity-8 text-600">{{ __("Subscription")}}:{{ $data[1] }}</div>
 
             </div>
             </div>
@@ -61,7 +61,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <div class="text-center" id="spinner" style="display:none;">
             <div class="mb-5"><span class="fa fa-spin fa-3x fa-sync"></span></div>
-            <div class="opacity-5">Redirecting to a secure payment page...</div>
+            <div class="opacity-5">{{ __("Redirecting to a secure payment page")}}...</div>
         </div>
 
 
@@ -81,14 +81,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
             <div class="text-decoration-none text-dark link-dark btn-block border shadow-sm p-3 rounded mb-4">
                 <div class="d-flex payment-%name%">
                     <div style="width:120px; height:40px; font-size: 30px;" class="mr-4 rounded overflow-hidden position-relative">
-                    Crédit 
+                     {{ __("Credit")}}
                     </div>
                         <div class="w-100">
                             <div class="d-flex justify-content-between">
                                 <div class="text-700 text-left">
-                                Utilisez mon nombre de crédit
+                               
+                                {{ __("Use my credit number")}}
                                 <div class="tiny">
-                                    <span class="opacity-5ppt-price">Balance:{{ $userBalance }} crédits</span>
+                                    <span class="opacity-5ppt-price">Balance:{{ $userBalance }} {{ __("credits")}} </span>
                                 </div>
 
 
@@ -128,7 +129,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-        <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile Money avec Cinetpay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
+        <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile Money Cinetpay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
         <input type="hidden" name="charset" value="utf-8">
         <input type="hidden" name="custom" value="SUBS-mem1-10-1835253144" class="paymentcustomfield">
         <input type="hidden" name="rm" value="2">
@@ -167,7 +168,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-                        <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile money avec Cool Pay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
+                        <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile money Cool Pay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
                         <input type="hidden" name="charset" value="utf-8">
                         <input type="hidden" name="custom" value="SUBS-mem1-10-1835253144" class="paymentcustomfield">
                         <input type="hidden" name="rm" value="2">
@@ -199,7 +200,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         <div class=" d-inline-flex mx-auto">
             <div ppt-icon-16="" data-ppt-icon-size="16"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
             <div class="ml-2">
-            All payment pages are secured using SSL.</div>
+             {{ __("All payment pages are secured using SSL")}}</div>
             </div>
         </div>
 
@@ -258,9 +259,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
      <h2 class="text-600 mb-3">
-        <span class="smilecode float-right" style="font-size: 40px;">&#x1F600;</span> Souscrire À  un abonnement</h2>
+        <span class="smilecode float-right" style="font-size: 40px;">&#x1F600;</span> {{ __("Subscribe to a Plan")}}</h2>
 
-     <p>Boostez vos annonces et obtenez plus de clients.</p>
+     <p>{{ __("Subscribe to a Plan")}}.</p>
 
 
 
@@ -284,7 +285,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
           <div class="card-body text-center">
 
               <div class="bg-primary memtxt position-absolute small text-600 btn btn-sm btn-rounded-25 text-light" style="top:-10px; right:10px;">
-                  1 Mois                </div>
+                  1 {{ __("Month")}}                </div>
 
               <div class="memprice">
                 <span class="text-700 " style="padding:12px;display:flex">{{ $membership['price'] }} XAF </span>
@@ -318,7 +319,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 <div class="card p-3">
 
-<div>&#x1F55B; Pas d'abonnement: Votre annonce sera supprimée d'ici <span class="text-600">14 jours</span> </div>
+<div>&#x1F55B; {{ __("No subscription: Your ad will be deleted by")}}  <span class="text-600">14 {{ __("days")}}</span> </div>
 
 
 </div>
@@ -363,7 +364,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         <div class="d-flex  justify-content-between">
 
                             <div class="_value">
-                <span class="">Aucun</span>
+                <span class="">{{ __("None")}}</span>
 
 
                 </div>
@@ -440,13 +441,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Photos
+                                  
+                                    {{ __("Pictures")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">{{ __("Manage your photos")}}</div>
                             </div>
 
                               </div>
@@ -459,13 +461,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Photos
+                                   {{ __("Pictures")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">{{ __("Manage your photos")}}</div>
                             </div>
 
                               </div>
@@ -478,13 +480,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Photos
+                                    {{ __("Pictures")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">{{ __("Manage your photos")}}</div>
                             </div>
 
                               </div>
@@ -497,13 +499,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Photos
+                                    {{ __("Pictures")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer ses photos</div>
+                              <div class="badge_tooltip__item">{{ __("Manage your photos")}}</div>
                             </div>
 
                               </div>
@@ -529,13 +531,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Profil
+                                    {{ __("Profile")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Voir le nombre de visite de votre annonce</div>
+                              <div class="badge_tooltip__item">{{ __("See the number of visits to your ad")}}</div>
                             </div>
 
                               </div>
@@ -548,13 +550,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Profil
+                                   {{ __("Profile")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Voir le nombre de visite de votre annonce</div>
+                              <div class="badge_tooltip__item">{{ __("See the number of visits to your ad")}}</div>
                             </div>
 
                               </div>
@@ -567,13 +569,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Profil
+                                   {{ __("Profile")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Voir le nombre de visite de votre annonce</div>
+                              <div class="badge_tooltip__item">{{ __("See the number of visits to your ad")}}</div>
                             </div>
 
                               </div>
@@ -586,13 +588,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Profil
+                                   {{ __("Profile")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Voir le nombre de visite de votre annonce</div>
+                              <div class="badge_tooltip__item">{{ __("See the number of visits to your ad")}}</div>
                             </div>
 
                               </div>
@@ -624,13 +626,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    VidÃ©os
+                                    
+                                    {{ __("Videos")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
+                              <div class="badge_tooltip__item">{{ __("Manage videos")}}.</div>
                             </div>
 
                               </div>
@@ -643,13 +646,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Vidéos
+                                    {{ __("Videos")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
+                              <div class="badge_tooltip__item">{{ __("Manage videos")}}.</div>
                             </div>
 
                               </div>
@@ -662,13 +665,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Vidéos
+                                   {{ __("Videos")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Gérer des vidéos.</div>
+                              <div class="badge_tooltip__item">{{ __("Manage videos")}}.</div>
                             </div>
 
                               </div>
@@ -708,13 +711,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Mise en avant
+                                    {{ __("Promote")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Mise en avant de l'annonce</div>
+                              <div class="badge_tooltip__item">{{ __("Highlighting the ad")}}</div>
                             </div>
 
                               </div>
@@ -727,13 +730,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Mise en avant
+                                    {{ __("Promote")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Mise en avant de l'annonce</div>
+                              <div class="badge_tooltip__item">{{ __("Highlighting the ad")}}</div>
                             </div>
 
                               </div>
@@ -746,13 +749,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Mise en avant
+                                    {{ __("Promote")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Mise en avant de l'annonce</div>
+                              <div class="badge_tooltip__item">{{ __("Highlighting the ad")}}</div>
                             </div>
 
                               </div>
@@ -795,13 +798,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Page d'accueil
+                                     {{ __("Home page")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Profil en page d'accueil</div>
+                              <div class="badge_tooltip__item">{{ __("Profile on home page")}}</div>
                             </div>
 
                               </div>
@@ -814,13 +817,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Page d'accueil
+                                    {{ __("Home page")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Profil en page d'accueil</div>
+                              <div class="badge_tooltip__item">{{ __("Profile on home page")}}</div>
                             </div>
 
                               </div>
@@ -867,13 +870,13 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div class="_name align-self-center">
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
-                                    Contacts Privé
+                                    {{ __("Private Contacts")}}
 
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Vos coordonnées sont affichées seulement aux membres.</div>
+                              <div class="badge_tooltip__item">{{ __("Your contact details are only displayed to members")}}</div>
                             </div>
 
                               </div>
@@ -917,12 +920,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                     <!--<i class="fal text-warning fa-cog" data-toggle="tooltip" data-placement="top" title=""></i> -->
 
 
-                                    Banniéres
+                                    {{ __("Banners")}}
 
                              <div class="badge_tooltip text-center float-right mr-3" data-direction="top">
                               <div class="badge_tooltip__initiator">
                              <i class="fal fa fa-info-circle" style="color:#000000"></i></div>
-                              <div class="badge_tooltip__item">Votre Annonce en page d'accueil.</div>
+                              <div class="badge_tooltip__item">{{ __("Your Ad on the home page")}}</div>
                             </div>
 
                               </div>
@@ -942,7 +945,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   
     <a href="{{ route('db.escort.ads') }}" class="text-decoration-none text-dark" >
     <div class="btn-light text-center text-600 p-3 mt-4">
-      Pas Maintenant!  </div>
+      {{ __("Not now!")}}  </div>
     </a>
 
 

@@ -1,11 +1,11 @@
 @extends('layouts.Frontend.master')
-@section('title', __('Liste des villes'))
+@section('title', __('List of cities'))
 @section('content')
 
 <div class="border-bottom">
 <div class="container py-4">
  
-<h1 class=" h3 mb-0 pb-0">Top villes Cameroun</h1>
+<h1 class=" h3 mb-0 pb-0">{{ __("Top cities Cameroon")}} </h1>
 <hr>
 
 

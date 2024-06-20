@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title> Annonces  </title>
+    <title> {{ __("Ads")}}  </title>
 
     <style>.preload-hide { display:none; }</style><meta name='robots' content='noindex, follow, max-image-preview:large' />
     <style id='classic-theme-styles-inline-css' type='text/css'>
@@ -46,14 +46,13 @@
 
 					<div class="col-md-6 text-600">
 
-
-					 Annonces sponsorisées
+          {{ __("Sponsored Ads")}}
 
 
 					<em class="text-500 ajax-search-found-wrap" style="">
 
 
-					<span class="ajax-search-found">{{ count($allAds) }}</span> results
+					<span class="ajax-search-found">{{ count($allAds) }}</span> {{ __("results")}} 
 
 
 
@@ -144,9 +143,9 @@
 
         <span ppt-icon-16 data-ppt-icon-size="16"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 416C0 398.3 14.33 384 32 384H86.66C99 355.7 127.2 336 160 336C192.8 336 220.1 355.7 233.3 384H480C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H233.3C220.1 476.3 192.8 496 160 496C127.2 496 99 476.3 86.66 448H32C14.33 448 0 433.7 0 416V416zM192 416C192 398.3 177.7 384 160 384C142.3 384 128 398.3 128 416C128 433.7 142.3 448 160 448C177.7 448 192 433.7 192 416zM352 176C384.8 176 412.1 195.7 425.3 224H480C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H425.3C412.1 316.3 384.8 336 352 336C319.2 336 291 316.3 278.7 288H32C14.33 288 0 273.7 0 256C0 238.3 14.33 224 32 224H278.7C291 195.7 319.2 176 352 176zM384 256C384 238.3 369.7 224 352 224C334.3 224 320 238.3 320 256C320 273.7 334.3 288 352 288C369.7 288 384 273.7 384 256zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H265.3C252.1 156.3 224.8 176 192 176C159.2 176 131 156.3 118.7 128H32C14.33 128 0 113.7 0 96C0 78.33 14.33 64 32 64H118.7C131 35.75 159.2 16 192 16C224.8 16 252.1 35.75 265.3 64H480zM160 96C160 113.7 174.3 128 192 128C209.7 128 224 113.7 224 96C224 78.33 209.7 64 192 64C174.3 64 160 78.33 160 96z"/></svg></span>
 
-        <span class="text-600 ml-2">Filtres</span>
+        <span class="text-600 ml-2">  {{ __("Filters")}}</span>
 
-        <em class="opacity-5 ml-3 text-500 ajax-search-found-wrap" style="display:none;"> <span class="ajax-search-found"></span> résultats </em>
+        <em class="opacity-5 ml-3 text-500 ajax-search-found-wrap" style="display:none;"> <span class="ajax-search-found"></span>   {{ __("results")}} </em>
     </div>
 </div>
 
@@ -161,11 +160,11 @@
 
 
             <select  style="width: 100%" name="subscribe_id" class="form-select p-3 text-dark  filterbox-tax_listing taxonomy" name="" id=""><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-                <option >Type Abonnement</option>
+                <option >  {{ __("Subscription Type")}}</option>
                 <option value="3">Ultra vip</option>
                 <option value="2">Gold</option>
                 <option value="1">Premium</option>
-                <option value="4">Sans Abonnement</option>
+                <option value="4"> {{ __("No Subscription")}}</option>
                 </select>
 
             </li>
@@ -174,7 +173,7 @@
 
 
                         <select name="quarter" id="quarter" data-key="quarter" style="width: 100%" class="form-select p-3 text-dark  filterbox-tax_listing taxonomy" name="town" id=""><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-                            <option >Sélectionner un quartier</option>
+                            <option >{{ __("Select quarter")}}</option>
                             @for($i=0;$i<count($quarters);$i++)
                             <option value="{{ $quarters[$i]['id']}}">{{ $quarters[$i]['quarter_name']}}</option>
                             @endfor
@@ -183,7 +182,7 @@
 
                       </li>
 
-                    <button class="btn" style="background-color:#ED5858;color:wheat">Filtrer</button>
+                    <button class="btn" style="background-color:#ED5858;color:wheat">{{ __("Filter")}}</button>
   </form>
 
         </ul>
@@ -325,7 +324,7 @@ function filterToggle(val){
 					<div class="col-md-12 text-600">
 
 
-					 Explorer <span class="ajax-search-found">{{ count($allAds) }}</span> annonces
+					 {{ __("Browse")}} <span class="ajax-search-found">{{ count($allAds) }}</span> {{ __("Ads")}}
 
 
 					<em class="text-500 ajax-search-found-wrap" style="">
@@ -387,7 +386,7 @@ function filterToggle(val){
                                     @endif
 								@if($ad['user']['isVerify']== 1)
 												<div class="badge" style="color:#FBFBFB;background-color:#ED5858;">
-														<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+														<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 												</div>
 										@endif
 
@@ -430,7 +429,7 @@ function filterToggle(val){
 								</div>
 										<div>
 								<a href="{{ route('ads.details', ['username' => $ad['user']['username'],'slug'=>$ad['slug']]) }}" data-ppt-btn=""
-                  style="background-color: #DA9DDC;" class="btn-secondary">Voir l'annonce</a>
+                  style="background-color: #DA9DDC;" class="btn-secondary">{{ __("See ad")}}</a>
 								</div>
 
 
@@ -455,7 +454,7 @@ function filterToggle(val){
               <div class="buttons-wrap">
 
                 <div class="button-new"
-                style="background-color: #DA9DDC; font-size:10px;">{{ $ad['age'] }} Ans</div>
+                style="background-color: #DA9DDC; font-size:10px;">{{ $ad['age'] }} {{ __("Years")}}</div>
 
               </div>
               <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -484,7 +483,7 @@ function filterToggle(val){
 
 					@if($ad['user']['isVerify']== 1)
 												<div class="badge" style="color:#FBFBFB;background-color:#2BA346;">
-														<span class="fal fa fa-check" style="color:#FBFBFB"> </span> Vérifié
+														<span class="fal fa fa-check" style="color:#FBFBFB"> </span> {{ __("Verified")}}
 												</div>
 										@endif
                   </div>

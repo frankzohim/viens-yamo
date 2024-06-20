@@ -1,13 +1,13 @@
 @extends('layouts.backoffice.escort.app')
-@section('title', __('Mes Abonnements'))
+@section('title', __('My Subscriptions'))
 
 @section('content')
 
 @include('utils.utils')
 
-<div class="fs-lg text-600 mb-2">Vos Abonnements </div>
+<div class="fs-lg text-600 mb-2">{{ __("My Subscriptions")}} </div>
 
-<p class="mb-4">Vous avez un total de <span class="  ">{{ count($currentPurchase) }}</span> abonnements.
+<p class="mb-4">{{ __("You have")}}  <span class="  ">{{ count($currentPurchase) }}</span> {{ __("subscriptions")}}.
 
   </p>
 
@@ -25,11 +25,11 @@
           <table class="table small table-orders">
             <thead>
               <tr>
-                <th>Annonce</th>
-                <th class="text-center">Type Abonnement</th>
-                <th class="text-center">Moyen de paiement:</th>
+                <th>{{ __("Ad")}}</th>
+                <th class="text-center">{{ __("Subscription Type")}}</th>
+                <th class="text-center">{{ __("Payment method")}}</th>
 
-                <th class="text-center">Expire le:</th>
+                <th class="text-center">{{ __("Expires on")}}</th>
                 <th class="text-center dashhideme">Status</th>
               </tr>
             </thead>
@@ -50,10 +50,10 @@
                       @if($purchase['status']==1)
 
                          <span class="inline-flex items-center font-weight-bold order-status-icon status-1"> <span class="dot mr-2"></span>
-                          <span>En Cours</span> </span>
+                          <span>{{ __("In progress")}}</span> </span>
                       @else
                           <span class="inline-flex items-center font-weight-bold order-status-icon status-6"> <span class="dot mr-2"></span>
-                          <span>Expiré</span> </span>
+                          <span>{{ __("Expired")}}</span> </span>
                       @endif
 
                       </td>
@@ -69,7 +69,7 @@
           </tbody>
           </table>
           @else
-           Vous n'avez aucun abonnement<a href="{{ route('db.escort.ads') }}"> cliquer ici </a> pour booster vos annonces.
+           {{ __("You have no subscription")}}<a href="{{ route('db.escort.ads') }}"> {{ __("click here")}} </a> {{ __("to boost your ads")}}.
           @endif
           </div>
 

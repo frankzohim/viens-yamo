@@ -1,7 +1,7 @@
 @extends("layouts.Frontend.master")
 
 @section('title')
-Félicitations
+ {{ __("Congratulations")}}
 @endsection
 
 @section("content")
@@ -17,7 +17,7 @@ Félicitations
       <div class="card-popup-content">
       <div class="">
       <span class="smilecode" style="font-size: 40px;">&#x1F600;</span>
-       <h5 class="text-white">Abonnement souscrit avec succès</h5>
+       <h5 class="text-white"> {{ __("Congratulations")}}</h5>
        </div>
       </div>
 </div>
@@ -27,14 +27,15 @@ Félicitations
 
 
 
-                  <p class="text-600">Merci, votre Abonnement a été Validé avec succès.
+                  <p class="text-600"> {{ __("Thank you, your Subscription has been successfully Validated.")}}
 
                     </p>
-                  <p class="margin-top3">Si vous avez des questions, contactez nous.</p>
+                  <p class="margin-top3"> {{ __("If you have any questions, contact us.")}}</p>
 
 
 
-                                                <div><a href="{{ route('my-purchase') }}" data-ppt-btn class="btn-primary btn-lg my-3">Voir mes Abonnements</a></div>
+                                                <div><a href="{{ route('my-purchase') }}" data-ppt-btn class="btn-primary btn-lg my-3"> 
+                                                  {{ __("View my Subscriptions")}}</a></div>
 
 
 

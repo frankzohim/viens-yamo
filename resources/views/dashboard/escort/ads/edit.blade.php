@@ -1,12 +1,12 @@
 @extends('layouts.backoffice.escort.app')
-@section('title', __('Modifier mon annonce'))
+@section('title', __('Edit my ad'))
 
 @section('content')
 
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
       
-<div class="fs-lg text-600 mb-2">Editer votre annonce </div>
+<div class="fs-lg text-600 mb-2"> {{ __("Edit my ad")}} </div>
 
     
       <main id="page-content-wrapper" class="with-mobilemenu">
@@ -16,7 +16,7 @@
 <div id="ppt-add-listing-save" style="display:none;">
     <div class="container py-5 my-5">
         <div class="alert alert-primary p-3 alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-spin fa-sync mr-3"></i>  Saving Your Changes</strong> - This may take a few minutes, please wait...
+            <strong><i class="fa fa-spin fa-sync mr-3"></i> {{ __("Saving Your Changes")}} </strong> - {{ __("This may take a few minutes, please wait")}}...
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
 <div id="" >
     <div class="container">
         <div class="alert alert-success p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-check mr-3"></i>  Super</strong> - Votre annonce a été mise à jour avec succès.
+            <strong><i class="fa fa-check mr-3"></i> Super</strong> - {{ __("Your ad has been successfully updated")}}.
         </div>
     </div>
 </div>
@@ -49,7 +49,7 @@
 <div id="ppt-invalid-fields" >
     <div class="container py-5 my-5">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text">{{ session('error') }}</span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i> {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text">{{ session('error') }}</span>
         </div>
     </div>
 </div>
@@ -59,7 +59,7 @@
 <div id="ppt-invalid-fields1" >
     <div class="container">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text">{{$errors->first()}}</span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i> {{ __("Error")}}  : </strong> <span id="ppt-invalid-fields-text">{{$errors->first()}}</span>
         </div>
     </div>
 </div>
@@ -68,7 +68,7 @@
 <div id="ppt-invalid-fields" style="display:none;">
     <div class="container">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text"></span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i> {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text"></span>
         </div>
     </div>
 </div>
@@ -99,7 +99,7 @@
 
 <div class="col-md-6">
 
-    <label>Je suis <span class="text-danger">*</span> </label>
+    <label>{{ __("I am")}} <span class="text-danger">*</span> </label>
 
     <div class="mt-2">
 
@@ -117,7 +117,7 @@
 
 <div class="col-md-6">
 
-    <label>Âge <span class="text-danger">*</span> </label>
+    <label>{{ __("Age")}} <span class="text-danger">*</span> </label>
 
     <div class="mt-2">
 
@@ -139,12 +139,12 @@
 
 
 <div class="col-md-6 mobile-mb-2">
-<label>Numéro de téléphone <span class="text-danger">*</span></label>
+<label>{{ __("Phone number")}}  <span class="text-danger">*</span></label>
 
 <div class="form-group position-relative">
     	<input  type="tel" class="form-control required" data-key="phone" name="phone" id="phone" 
 		value="{{ $ad['whatsapp'] }}" required>
-		<span id="valid-msg" style="display:none">✓ Valid</span>
+		<span id="valid-msg" style="display:none">✓ {{ __("Valid")}}</span>
 		<span id="error-msg" class="hide"></span>
   </div>
 
@@ -152,11 +152,11 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-<label>Ville </label>
+<label>{{ __("Town")}} </label>
 <div class="form-group position-relative">
     @if($towns)
     <select class="form-control" name="town" id="town" data-key="town" onchange="fetchQuarters(this)">
-		<option value="">Sélectionner la ville</option>
+		<option value="">{{ __("Select town")}}</option>
 		@forelse ($towns as $town)
 			<option @if ($ad['town']['id'] ==$town['id']) selected @endif value="{{  $town['id'] }}">{{ $town['town_name'] }}</option>
 		@empty
@@ -172,7 +172,7 @@
 </div>
 
 <div class="col-md-12 mobile-mb-2"  id='quarterList'>
-<label>Quartier <span class="text-danger">*</span> </label>
+<label> {{ __("Quarter")}} <span class="text-danger">*</span> </label>
 
 <div class="form-group position-relative" id='selectList'>
     <select class="form-control" name="quarter" id="quarter" data-key="quarter">
@@ -187,7 +187,7 @@
 
 </div>
 <div class="col-md-6 mobile-mb-2">
-<label>Titre <span class="text-danger">*</span> </label>
+<label>{{ __("Title")}} <span class="text-danger">*</span> </label>
 
 <div class="form-group position-relative">
     <input type="text" placeholder="Entrer le titre de l'annonce" class="form-control" 
@@ -199,7 +199,7 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-<label>Catégorie <span class="text-danger">*</span> </label>
+<label> {{ __("Category")}} <span class="text-danger">*</span> </label>
 <div class="form-group position-relative">
   
 	@if($adsCategories)
@@ -222,14 +222,14 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-	<label>Déplacement<span class="text-danger">*</span> </label>
+	<label> {{ __("Place")}}<span class="text-danger">*</span> </label>
 		<input type="hidden" id="user_id" value="{{ $user->id }}" name="user_id">
 		<div class="form-group position-relative">
 				
 					 <select class="form-control" name="location" id="location">
-						<option value="Reçoit ou se déplace" @if ($ad['accepted'] =="Reçoit ou se déplace") selected @endif>Reçoit ou se déplace</option>
-						<option value="Se déplace seulement" @if ($ad['accepted'] =="Se déplace seulement") selected @endif>Se déplace seulement</option>
-						<option value="Reçoit seulement" @if ($ad['accepted'] =="Reçoit seulement") selected @endif>Reçoit seulement</option>
+						<option value="Reçoit ou se déplace" @if ($ad['accepted'] =="Reçoit ou se déplace") selected @endif>{{ __("Receives or moves")}}</option>
+						<option value="Se déplace seulement" @if ($ad['accepted'] =="Se déplace seulement") selected @endif>{{ __("Moves only")}}</option>
+						<option value="Reçoit seulement" @if ($ad['accepted'] =="Reçoit seulement") selected @endif>{{ __("Receives only")}}</option>
 				</select>
         </div>
 
@@ -238,13 +238,13 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-	<label> Clients Acceptés <span class="text-danger">*</span> </label>
+	<label>  {{ __("Accepted Customers")}} <span class="text-danger">*</span> </label>
 <div class="form-group position-relative">
   
     <select class="form-control" name="accepted" id="accepted">
-			<option value="Hommes" @if ($ad['accepted'] =="Hommes") selected @endif>Hommes</option>
-			<option value="Femmes" @if ($ad['accepted'] =="Femmes") selected @endif>Femmes</option>
-			<option value="Tout le monde"  @if ($ad['accepted'] =="Tout le monde") selected @endif>Tout le monde</option>
+			<option value="Hommes" @if ($ad['accepted'] =="Hommes") selected @endif>{{ __("Men")}}</option>
+			<option value="Femmes" @if ($ad['accepted'] =="Femmes") selected @endif>{{ __("Woman")}}</option>
+			<option value="Tout le monde"  @if ($ad['accepted'] =="Tout le monde") selected @endif>{{ __("Everyone")}}</option>
 	</select>
   </div>
 
@@ -321,7 +321,7 @@ data-0="2" data-margin="20" data-autoplay="1" style="z-index:12">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title f-w-600" id="exampleModalLabel">Suppression</h5>
+                                                    <h5 class="modal-title f-w-600" id="exampleModalLabel">{{ __("Deletion")}}</h5>
                                                     <button class="btn-close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                                 </div>
                                                 <div class="modal-body">
@@ -329,12 +329,13 @@ data-0="2" data-margin="20" data-autoplay="1" style="z-index:12">
                                                     @csrf
 
 													<input type="hidden" name="imagesLeft" value="{{ count($ad['images']) }}">
-                                                    <p>{{ __('Voulez vous supprimer cette image?') }}</p>
+                                                    <p>{{ __('Do you want to delete this image?') }}</p>
                                                    
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary">Oui</button>
-                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                                                    <button type="submit" class="btn btn-primary">
+														{{ __('Yes') }}</button>
+                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ __('Cancel') }}</button>
                                                 </div>
                                                 </form>
                                             </div>
@@ -344,7 +345,7 @@ data-0="2" data-margin="20" data-autoplay="1" style="z-index:12">
       
     @endforelse            
 	<div >
-			<label class="w-100">Photos (2 maximum) ( vous pouvez encore ajouter {{ 2 - count($ad['images']) }} images) <span class="text-danger">*</span> (.png, .jpg, .jpeg) </label> 
+			<label class="w-100">{{ __("Pictures")}} (2 maximum) ( {{ __("you can still add")}} {{ 2 - count($ad['images']) }} {{ __("Pictures")}}) <span class="text-danger">*</span> (.png, .jpg, .jpeg) </label> 
 		   
 			<div class="cardbox closed" onclick="jQuery('#ratesbox, #ratesbit').toggle();">
 				  <i class="fa fa-cloud-upload" style="color:red"></i>
@@ -356,10 +357,6 @@ data-0="2" data-margin="20" data-autoplay="1" style="z-index:12">
 					 </form>     
 				  </div>
 				</div>
-			
-          
-
-            
      </div>
 
 </div>
@@ -484,7 +481,7 @@ jQuery(document).ready(function() {
 
     <div>
     <button data-ppt-btn="" class=" btn-system btn-forward btn-lg scroll-top-quick text-600" type="button" id="register-btn"
-	onclick="processSubmitForm()">Enregistrer l'annonce</button>
+	onclick="processSubmitForm()">{{ __('Save ad') }} </button>
 
 
     </div>
@@ -512,7 +509,7 @@ jQuery(document).ready(function() {
 <section class="mb-5  text-600 show-mobile">
 <div class="container">
 
-<button type="button" data-ppt-btn="" class=" btn-lg btn-secondary btn-save" id="mainSaveBtn">Créer l'annonce</button>
+<button type="button" data-ppt-btn="" class=" btn-lg btn-secondary btn-save" id="mainSaveBtn">{{ __('Save ad') }}</button>
 
 </div>
 </section>
@@ -811,14 +808,14 @@ function textarealimit(){
 		 jQuery('#textarea_counter').hide();
 		 }
 
-		 jQuery('#textarea_counter span').html( '<b>' + text_remaining + '</b> caractères restants');
+		 jQuery('#textarea_counter span').html( '<b>' + text_remaining + '</b> {{ __("remaining characters")}}');
 
 		  jQuery('#field-post_content').keyup(function() {
 
 			   var text_length = jQuery('#field-post_content').val().length;
 			   var text_remaining = text_max - text_length;
 
-			   jQuery('#textarea_counter span').html( '<b>' + text_remaining + '</b> caractères restants');
+			   jQuery('#textarea_counter span').html( '<b>' + text_remaining + '</b> {{ __("remaining characters")}}');
 
 			if(text_remaining < 0){
 				jQuery('#textarea_counter').hide();

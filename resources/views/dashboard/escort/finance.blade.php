@@ -1,5 +1,5 @@
 @extends('layouts.backoffice.escort.app')
-@section('title', __('Mes Transactions'))
+@section('title', __('My Transactions'))
 
 @section('content')
 
@@ -29,9 +29,9 @@
         <div class="_content p-lg-5 p-3" >
 
 
-<div class="fs-lg text-600 mb-2">Transactions </div>
+<div class="fs-lg text-600 mb-2">{{ __("My Transactions")}}  </div>
 
-<p class="mb-4">Votre compte possède <span class="">{{ $userBalance }} de credits</span>.
+<p class="mb-4">{{ __("Your account has")}} <span class="">{{ $userBalance }} {{ __("of credits")}}</span>.
 
   </p>
 
@@ -52,11 +52,10 @@
                   <tr>
                     <th> ID</th>
                     <th class="text-center">Date</th>
-                    <th class="text-center">Montant</th>
+                    <th class="text-center">{{ __("Amount")}}</th>
 
                     <th class="text-center">Status</th>
                     <th class="text-center dashhideme">Type</th>
-                     <th class="text-center dashhideme">Type</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -81,11 +80,11 @@
 
                        @if($payment->status=="2")
                         <span class="inline-flex items-center font-weight-bold order-status-icon status-1"> <span class="dot mr-2"></span>
-                        <span>Payé</span> </span>
+                        <span>{{ __("Paid")}}</span> </span>
                         @endif
                          @if($payment->status=="1")
                         <span class="inline-flex items-center font-weight-bold order-status-icon status-5"> <span class="dot mr-2"></span>
-                        <span>Echoué</span> </span>
+                        <span>{{ __("Failed")}}</span> </span>
                         @endif
 
 
@@ -103,7 +102,7 @@
               </table>
             @endif
               @if (count($payments)==0)
-              Vous n'aviez encore effectuer aucune transactions.
+              {{ __("You have not yet made any transactions")}}.
               @endif
           </div>
 
@@ -205,13 +204,5 @@ jQuery(".count-balance").html("$2,222,394,955.52");
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 @endsection

@@ -119,15 +119,16 @@ nav .fa{
                    @if(!isset($user))
                   <li><a href="{{ route('login') }}">  {{ __("LOGIN")}}  </a></li>
                   <li><a href="/register">  {{ __("REGISTER")}}  </a></li>
+                  
                   @else
                    @if($user->role_id==2)
-                        <li> <a href="{{ route('db.escort.index') }}">  {{ __("MY DASHBOARD")}}</a> </li>
+                        <li> <a href="{{ route('db.escort.index') }}">  {{ __("Dashboard")}}</a> </li>
                     @endif
                     @if($user->role_id==1)
-                        <li> <a href="{{ route('admin.dashboard') }}"> {{ __("MY DASHBOARD")}}</a> </li>
+                        <li> <a href="{{ route('admin.dashboard') }}"> {{ __("Dashboard")}}</a> </li>
                     @endif
                     @if($user->role_id==3)
-                        <li> <a href="{{ route('db.customer.index') }}"> {{ __("MY DASHBOARD")}}</a> </li>
+                        <li> <a href="{{ route('db.customer.index') }}"> {{ __("Dashboard")}}</a> </li>
                     @endif
 
                   <li onclick="event.preventDefault(); document.getElementById('logout').submit();"><a href="#">  {{ __("LOGOUT")}} </a></li>
@@ -194,13 +195,13 @@ nav .fa{
                     <li> <a href="/register">{{ __("Register")}}</a> </li>
                   @else
                     @if($user->role_id==2)
-                        <li> <a href="{{ route('db.escort.index') }}">{{ __("My Dashboard")}}</a> </li>
+                        <li> <a href="{{ route('db.escort.index') }}">{{ __("Dashboard")}}</a> </li>
                     @endif
                     @if($user->role_id==1)
-                        <li> <a href="{{ route('admin.dashboard') }}">{{ __("My Dashboard")}}</a> </li>
+                        <li> <a href="{{ route('admin.dashboard') }}">{{ __("Dashboard")}}</a> </li>
                     @endif
                     @if($user->role_id==3)
-                        <li> <a href="{{ route('db.customer.index') }}">{{ __("My Dashboard")}}</a> </li>
+                        <li> <a href="{{ route('db.customer.index') }}">{{ __("Dashboard")}}</a> </li>
                     @endif
                      <form method="POST" action="{{ route('logout') }}" id="logout">
                                 @csrf
@@ -305,13 +306,13 @@ nav .fa{
 
     @if(isset($user))
             @if($user->role_id==2)
-              <li> <a href="{{ route('db.escort.index') }}">{{ __("My Dashboard")}}</a> </li>
+              <li> <a href="{{ route('db.escort.index') }}">{{ __("Dashboard")}}</a> </li>
             @endif
             @if($user->role_id==1)
-                <li> <a href="{{ route('admin.dashboard') }}">{{ __("My Dashboard")}}</a> </li>
+                <li> <a href="{{ route('admin.dashboard') }}">{{ __("Dashboard")}}</a> </li>
             @endif
             @if($user->role_id==3)
-                <li> <a href="{{ route('db.customer.index') }}">{{ __("My Dashboard")}}</a> </li>
+                <li> <a href="{{ route('db.customer.index') }}">{{ __("Dashboard")}}</a> </li>
             @endif
         @if(isset($user))
 

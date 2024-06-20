@@ -20,7 +20,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
 	<link rel="manifest" href="{{ asset('assets/favicon/manifest.json') }}">
 
-    <title>Créer un compte</title>
+    <title>{{ __("Register")}}</title>
 	<link rel="stylesheet" href="{{ asset('assets/intl-tel-input-master/build/css/intlTelInput.css') }}">
 
     <style>.preload-hide { display:none; }</style>
@@ -59,7 +59,7 @@
 <div id="ppt-add-listing-save" style="display:none;">
     <div class="container py-5 my-5">
         <div class="alert alert-primary p-3 alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-spin fa-sync mr-3"></i>  Enregistrement</strong> - Cela peut prendre quelques minutes, veuillez patienter...
+            <strong><i class="fa fa-spin fa-sync mr-3"></i> {{ __("Registration")}} </strong> - {{ __("This may take a few minutes, please be patient")}}...
         </div>
     </div>
 </div>
@@ -67,7 +67,7 @@
 <div id="ppt-add-listing-save-success" style="display:none;">
     <div class="container ">
         <div class="alert alert-success p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-check mr-3"></i>  Super</strong> - Votre compte a été créée, amusez vous.
+            <strong><i class="fa fa-check mr-3"></i>  {{ __("Great")}}</strong> - {{ __("Your account has been created, have fun")}}.
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@
 <div id="ppt-invalid-fields" style="display:none;">
     <div class="container">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text"></span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  {{ __("Register")}}  : </strong> <span id="ppt-invalid-fields-text"></span>
         </div>
     </div>
 </div>
@@ -83,7 +83,7 @@
 <div id="ppt-invalid-fields" style="display:none;">
     <div class="container">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text"></span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text"></span>
         </div>
     </div>
 </div>
@@ -119,8 +119,8 @@
         <div class="bg-white shadow text-dark mb-4 p-3 rounded-lg">
 
 
-		<div class="text-700 mb-2"><i class="fa fa-info-circle mr-2"></i> Astuce</div>
-		<p>Déjà un compte? <a href="{{ route('login') }}">Se connecter</a></p>
+		<div class="text-700 mb-2"><i class="fa fa-info-circle mr-2"></i> {{ __("Tip")}}</div>
+		<p>{{ __("Register")}} <a href="{{ route('login') }}">{{ __("Log In")}}</a></p>
         </div>
 
 
@@ -138,25 +138,25 @@
     <div class="card card-add-block mb-0"><div class="card-body">
 
     <div class="_title"><span class="title-number bg-secondary"><i class="fa fa-user"></i></span>
-		 Création d'un compte</div>
+		 {{ __("Register")}}</div>
 
 
 
 
 <div class="col-md-6">
 
-    <label>Je suis <span class="text-danger">*</span> </label>
+    <label>{{ __("I am")}} <span class="text-danger">*</span> </label>
 
     <div class="mt-2">
 
         <div class="usertry gender checked gender-2" onclick="processGender('2');">
 
-        <div><i class="fa fa-check-circle"></i> Escorte</div>
+        <div><i class="fa fa-check-circle"></i> {{ __("Escorte")}}</div>
 
     </div>
         <div class="usertry gender  gender-3" onclick="processGender('3');">
 
-        <div><i class="fa fa-check-circle"></i> Membre</div>
+        <div><i class="fa fa-check-circle"></i> {{ __("Member")}}</div>
 
     </div>
         </div>
@@ -167,11 +167,11 @@
 <div class="row">
 
 <div class="col-md-5 mobile-mb-2">
-<label>Numéro de téléphone <span class="text-danger">*</span></label>
+<label>{{ __("Phone number")}} <span class="text-danger">*</span></label>
 
 <div class="form-group position-relative">
     	<input name="custom[whatsapp]" type="tel" class="form-control required" data-key="phone" id="phone" value="" required>
-		<span id="valid-msg" style="display:none">✓ Valid</span>
+		<span id="valid-msg" style="display:none">✓ {{ __("Valid")}}</span>
 		<span id="error-msg" class="hide"></span>
   </div>
 
@@ -195,7 +195,7 @@
 <div class="row">
 
 <div class="col-md-6 mobile-mb-2">
-<label class="">Nom d'utilisateur. <span class="text-danger">*</span> </label>
+<label class="">{{ __("Username")}}. <span class="text-danger">*</span> </label>
 
 
   <input type="input" name="form[post_title]" id="username"
@@ -205,12 +205,12 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-<label>Ville <span class="text-danger">*</span> </label>
+<label>{{ __("Town")}} <span class="text-danger">*</span> </label>
 <div class="form-group position-relative">
 
 
 	<select name="town" id="town" class="form-control" value="" data-key="town" >
-		<option value="">Sélectionner la ville</option>
+		<option value="">{{ __("Select town")}}</option>
 		@foreach ($towns as $town)
 			<option value="{{ $town['id'] }}">{{ $town['town_name'] }}</option>
 		@endforeach
@@ -229,10 +229,10 @@
 <div class="row">
 
 <div class="col-md-6 mobile-mb-2">
-<label>Mot de passe <span class="text-danger">*</span> </label>
+<label>{{ __("Password")}}  <span class="text-danger">*</span> </label>
 
 <div class="form-group position-relative">
-    <input type="password" placeholder="Mot de passe" class="form-control" name="mypass" id="mypass" data-key="mypass" value="" autocomplete="current-password">
+    <input type="password" placeholder="{{ __('Password')}}" class="form-control" name="mypass" id="mypass" data-key="mypass" value="" autocomplete="current-password">
 
     <i class="fal fa-lock"></i>
 
@@ -243,9 +243,9 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-<label>Confirmation mot de passe <span class="text-danger">*</span> </label>
+<label>{{ __("Password confirmation")}} <span class="text-danger">*</span> </label>
 <div class="form-group position-relative">
-    <input type="password" placeholder="Confirmation mot de passe" class="form-control" name="mypass1" id="mypass1" value="" data-key="mypass1" autocomplete="current-password">
+    <input type="password" placeholder="{{ __('Password confirmation')}}" class="form-control" name="mypass1" id="mypass1" value="" data-key="mypass1" autocomplete="current-password">
 
     <i class="fal fa-lock"></i>
 
@@ -256,7 +256,7 @@
 <div class="form-check mt-3">
     <input class="form-check-input" name="cgu" type="checkbox"  required id="cgu">
     <label class="form-check-label" for="cgu">
-      J'accepte les <a target="_blank" href="{{ route('cgu') }}">termes et conditions de confidentialités</a>
+      {{ __("I accept")}} <a target="_blank" href="{{ route('cgu') }}">{{ __("terms of use")}}</a>
     </label>
   </div>
 </div>
@@ -331,7 +331,7 @@ jQuery(document).ready(function() {
 
     <div>
     <button data-ppt-btn="" class=" btn-system btn-forward btn-lg scroll-top-quick text-600" type="button" id="register-btn"
-	onclick="processSubmitForm()">S'inscrire</button>
+	onclick="processSubmitForm()">{{ __("Register now")}}</button>
 
 
 
@@ -386,7 +386,7 @@ jQuery(document).ready(function() {
 <section class="mb-5  text-600 show-mobile">
 <div class="container">
 
-<button type="button" data-ppt-btn="" class=" btn-lg btn-secondary btn-save" id="mainSaveBtn">S'inscrire</button>
+<button type="button" data-ppt-btn="" class=" btn-lg btn-secondary btn-save" id="mainSaveBtn">{{ __("Register now")}}</button>
 
 </div>
 </section>

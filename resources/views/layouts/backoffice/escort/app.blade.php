@@ -3,6 +3,9 @@
 <html xmlns="https://www.w3.org/1999/xhtml" lang="en-US">
 <!--[if lte IE 8 ]><html lang="en" class="ie ie8"><![endif]-->
 <!--[if IE 9 ]><html lang="en" class="ie"><![endif]-->
+
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -160,15 +163,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     @if($user->isSecure==0)
     <div>
 
-        <button class="open-button" onclick="openForm()">Sécurisé votre compte</button>
+        <button class="open-button" onclick="openForm()">{{ __("Secure your account")}}</button>
 
         <div class="form-popup" id="myForm">
           <form action="/action_page.php" class="form-container">
-            <p style="color:white;text-align:center"> Votre compte n'est pas encore securisé...</p>
+            <p style="color:white;text-align:center"> {{ __("Your account is not yet secure")}}...</p>
             <a class="btn" href="{{ route('selectQuestion') }}">
-                Sécuriser maintenant
+                {{ __("Secure now")}}
             </a>
-            <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">{{ __("Close")}}</button>
           </form>
         </div>
     </div>
@@ -196,7 +199,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <div class="_header border-0 cursor" ppt-flex-row  onclick="AccountMenuToggle();">
           <div class="_title">
-            Rubriques
+            {{ __("Sections")}}
           </div>
 
           <div class="_close" >
@@ -217,7 +220,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <div class="_header hide-mobile border-0 account-right-top" ppt-flex-row>
           <div class="_title">
-          Tableau de bord
+          {{ __("Dashboard")}}
           </div>
           <a href="https://es10.premiummod.com/contact/" class="text-dark">
           <div class="_close">

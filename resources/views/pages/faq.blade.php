@@ -59,7 +59,7 @@ Faq
 
                 </div>
             @empty
-                <p class="text-center">Aucune Faq disponible</p>
+                <p class="text-center">{{ __("No FAQs available")}}</p>
             @endforelse
 
 

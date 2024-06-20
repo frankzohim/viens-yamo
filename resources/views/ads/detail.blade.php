@@ -191,8 +191,8 @@ opacity: 0.4
 <div class="border-bottom py-3">
   <div class="container">
     <div class="list-list small letter-spacing-1 arrow">
-      <span><a href="{{ route('homepage') }}" class="text-dark">Accueil</a></span>
-            <span><a href="#" class="text-dark">Annonces</a></span>
+      <span><a href="{{ route('homepage') }}" class="text-dark">{{ __("Home page")}}</a></span>
+            <span><a href="#" class="text-dark">{{ __("Ads")}}</a></span>
                   <span><a href="#" class="text-dark"> {{ ucfirst($ad['title']) }}</a></span>
                       </div>
   </div>
@@ -213,7 +213,7 @@ opacity: 0.4
 
 
 								<h6 class="fs-lg text-100">
-								 <div class="addeditmenu" data-key="title"></div>Contactez l'escorte	</h6>
+								 <div class="addeditmenu" data-key="title"></div>{{ __("Contact escort")}}	</h6>
 
 
 
@@ -251,21 +251,21 @@ opacity: 0.4
                             @if(isset($user) && $subscribeOrNot===1)
                             <a href="https://api.whatsapp.com/send?phone={{ $ad['whatsapp'] }}&text=Bonjour {{ $ad['title']}} je suis intéressé par ta publication sur viens-yamo.com" target="_blank" rel="nofollow"
 							class="btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
-                                <i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                <i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                 </a>
                                 @endif
 
                                 @if(isset($user) && $subscribeOrNot!==1)
                                     <a data-toggle="modal" data-target="#staticBackdrop" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
 
-                                        <span><i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                        <span><i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                         </a>
                                 @endif
 
                                 @if(empty($user))
                                 <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
 
-                                    <span><i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                    <span><i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                     </a>
                                 @endif
                             @endif
@@ -291,7 +291,7 @@ opacity: 0.4
 
                               @if($ad['subscribe_id']!==3)
                                 <a href="https://api.whatsapp.com/send?phone={{ $ad['whatsapp'] }}&text=Bonjour {{ $ad['title']}} je suis intéressé par ta publication sur viens-yamo.com" target="_blank" rel="nofollow" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
-                                    <i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                    <i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                     </a>
 
 							   @endif
@@ -340,7 +340,7 @@ opacity: 0.4
 							  <div ppt-icon-64="" data-ppt-icon-size="64" style="color: #ED5858">
 								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>      </div>
 							  <div class="fs-5 text-600 mt-3">
-								N'oubliez pas de mentionner VIENS YAMO lors de votre appel!    </div>
+								{{ __("Don't forget to mention VIENS YAMO when you call!")}}    </div>
 							</div>
 						  </div>
 						  </a>
@@ -349,26 +349,26 @@ opacity: 0.4
 						  <div ppt-box="" class="rounded">
 						  <div class="_header d-md-flex align-items-center">
 							<div class="_title w-100">
-							  EVITEZ LES ARNAQUES   </div>
+							  {{ __("AVOID SCAMS")}}    </div>
 						  </div>
 							 <ul>
 
 
 							<li class="text-center my-4 p-3">
-							<span>&#10060; Ne JAMAIS payer le transport à un(e) client(e) que vous ne connaissez pas.</span>
+							<span>&#10060;{{ __("NEVER pay for transportation to a customer you don't know.")}}  </span>
 							</li>
 							<li class="text-center my-4 p-3">
-							  <span>&#10060; Ne JAMAIS faire d'avance de paiement sans être avec la personne concernée.</span>
+							  <span>&#10060;{{ __("NEVER make an advance payment without being with the person concerned")}}  </span>
 							  </li>
 
 
 							<li class="text-center my-4 p-3">
-							  <span>&#10060; Ne pas faire confiance pour un service trop beau pour être vrai.
+							  <span>&#10060; {{ __("Do not trust a service that is too good to be true.")}} 
 								</span></li>
 
 
 							<li class="text-center my-4 p-3">
-							  <span>&#9989; Dénoncer l'annonce plus bas avec preuves si vous êtes victime d'une tentative d'arnaque.</span>
+							  <span>&#9989;{{ __("Report the ad below with proof if you are the victim of an attempted scam.")}}  </span>
 							</li>
 
 
@@ -380,14 +380,14 @@ opacity: 0.4
 						<div class="p-4 rounded" ppt-box="">
 						   <a href="{{ route('report', ['id'=>$ad['id'], 'type'=>'ads']) }}"><button class=" text-600  text-center" data-ppt-btn=""
 									style="min-width:60px; background-color: #ED5858;color:white">
-								Dénoncer cette annonce
+								{{ __("Report this ad")}} 
 							  </button></a>
 						</div>
 
 
 						<div class="p-4 hide-mobile rounded" ppt-box="">
 
-						<p class="text-600">Partagez cette annonce via</p>
+						<p class="text-600">{{ __("Share this announcement via")}} </p>
 
 
 						<style>
@@ -429,13 +429,13 @@ opacity: 0.4
 
 						</ul>
 
-							  <p class="small opacity-8">Ou copier le lien</p>
+							  <p class="small opacity-8">{{ __("Or copy the link")}}</p>
 							  <div class="field">
 								<i class="fa fa-link"></i>
 								<input type="text" readonly="" id="copylink" value="{{ url()->current() }}">
 								<button class=" btn-sm text-600 js-copy-link text-center" style="background-color :#ED5858;color:white" data-ppt-btn=""
 									data-clipboard-target="#copylink" style="min-width:60px;">
-								Copier
+								 {{ __("Copy")}}
 							  </button>
 							  </div>
 
@@ -460,7 +460,7 @@ opacity: 0.4
 
 								jQuery(".card-share .field").addClass("active");
 
-								 alert("Lien enregistré dans votre presse-papiers.");
+								 alert({{ __("Link saved to clipboard")}});
 
 								 });
 
@@ -484,7 +484,7 @@ opacity: 0.4
 												<div data-type="favs" data-pid="0" data-uid="0" class="button_user_add " data-text="1"
 												data-button="0">
 
-													<span>{{ $ad['age'] }} Ans</span>
+													<span>{{ $ad['age'] }} {{ __("Years")}}</span>
 
 												</div>
 
@@ -523,7 +523,7 @@ opacity: 0.4
 													<div data-type="favs" data-pid="0" data-uid="0" class="button_user_add " data-text="1"
 													data-button="0">
 
-														<span>Vérifié</span>
+														<span> {{ __("Verified")}}</span>
 
 													</div>
 
@@ -535,8 +535,8 @@ opacity: 0.4
 											  <div
 											  style="display: flex;align-items:center">
 													<div class="badge_tooltip__initiator">
-												<i class="fal fa fa-eye" style="color:#000000"></i>&nbsp;&nbsp;&nbsp; {{ $ad['visits'] }}  vues	    </div>
-													<div class="badge_tooltip__item">{{ $ad['visits'] }}	vues </div>
+												<i class="fal fa fa-eye" style="color:#000000"></i>&nbsp;&nbsp;&nbsp; {{ $ad['visits'] }}  {{ __("views")}}	    </div>
+													<div class="badge_tooltip__item">{{ $ad['visits'] }}	{{ __("views")}} </div>
 												</div>
 												&nbsp;&nbsp;&nbsp;
 
@@ -579,7 +579,7 @@ opacity: 0.4
 								  &nbsp;
 								</div>
 										<div class="allphotos z-10 h-100 position-absolute w-100 y-middle text-light text-700">
-								  Toutes les Photos       </div>
+								   {{ __("All the pictures")}}     </div>
 								<div class="overlay-inner" style="z-index:1">
 								</div>
 									  </div>
@@ -649,7 +649,7 @@ opacity: 0.4
 						<div ppt-box="" class="rounded">
 						  <div class="_header d-md-flex align-items-center">
 							<div class="_title w-100">
-							  Description de l'annonce    </div>
+							  {{ __("Description ad")}}  </div>
 							<div class="lh-10 w-100 mt-2 pt-1 mr-3 hide-mobile" ppt-flex-end="">
 
 							<div class="ppt-badges clearfix mb-3">
@@ -721,25 +721,13 @@ opacity: 0.4
 
 						</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 						  </div>
 
 						</div>
                         <div ppt-box="" class="rounded p-3">
                             <div class="_header d-md-flex align-items-center">
                               <div class="_title w-100">
-                                Commentaires   </div>
+                                 {{ __("Comments")}}  </div>
 
                             </div>
                             <div class="card ">
@@ -747,10 +735,10 @@ opacity: 0.4
                                 <div class="flex justify-center align-items-center" style="display: flex;flex-direction:row;justify-content:space-between">
                                     <div class="hide-mobile" style="width: 100px;"><img src="{{ asset('assets/images/user (1).png') }}" width="50" class="rounded-circle mt-2"> </div>
                                     <div style="flex: 1" class="comment-box ml-2">
-                                        <h4>Noter cette annonce</h4> <br>
+                                        <h4>{{ __("Rate this ad")}} </h4> <br>
                                         <form action="{{ route('review.user',$ad['id']) }}" method="post">
                                             @csrf
-											 <label for="stars">Choississez le nombre d'etoile</label>  <br>
+											 <label for="stars">{{ __("Choose the number of stars")}}</label>  <br>
                                             <div class="rating">
 												<input type="radio"  name="rating" value="5" id="5"><label for="5">☆</label>
 												<input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
@@ -766,7 +754,7 @@ opacity: 0.4
                                             <div class="comment-btns mt-2">
                                             <div class="row">
                                             <div class="col-6">
-                                                <div class="pull-right"> <button type="submit" class="send">Envoyer<i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                                                <div class="pull-right"> <button type="submit" class="send">{{ __("Send")}}<i class="fa fa-long-arrow-right ml-1"></i></button> </div>
                                             </div>
 
                                             </div>
@@ -778,7 +766,7 @@ opacity: 0.4
 
                                 @if(count($reviews)!==0)
                                 <div style="margin-top: 50px;">
-                                    <h3 style="text-align: center;color:rgb(85, 85, 85);">Commentaires les plus récents</h3>
+                                    <h3 style="text-align: center;color:rgb(85, 85, 85);">{{ __("Most recent comments")}}</h3>
                                 </div>
                                 @endif
 
@@ -807,7 +795,7 @@ opacity: 0.4
                                     <p style="font-size: 15px;margin-left:50px;text-align: justify;color:rgb(85, 85, 85);">{{ $review['comment'] }}</p>
                                 </div>
                                 @empty
-                                <p style="font-size: 15px;margin-left:50px;text-align: center;color:rgb(85, 85, 85);">Aucun Commentaires disponible</p>
+                                <p style="font-size: 15px;margin-left:50px;text-align: center;color:rgb(85, 85, 85);">{{ __("Most recent comments")}}</p>
                                 @endforelse
 
                                     </div>
@@ -823,17 +811,16 @@ opacity: 0.4
             <div class="col-md-11 col-lg-11 col-xl-11 mx-auto text-center">
 
               <h2 class="fs-lg mb-3" data-ppt-title="" underline_color="#000"><span class="ppt-headline">
-                Avertissement<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+                {{ __("Warning")}}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
                   <path style="stroke:#000" d="M9.3,127.3c49.3-3,150.7-7.6,199.7-7.4c121.9,0.4,189.9,0.4,282.3,7.2C380.1,129.6,181.2,130.6,70,139 c82.6-2.9,254.2-1,335.9,1.3c-56,1.4-137.2-0.3-197.1,9"/></svg>
 
       </span></h2>
 
               <p class="lead" data-ppt-subtitle="">
-                Les publications sur ce site sont faites de façon décentralisée, et automatique par toutes personnes voulant vendre ses services pour adultes.
-                En utilisant le site vous acceptez que le propriétaire du site soit décliné de toutes éventuelles reponsabilités
-                quelque soit la nature. Si vous n'êtes pas  d'accord avec certains contenus de ce site veuillez le quitter en urgence</p>
+				{{ __("Publications on this site are made in a decentralized manner, and automatically by anyone wanting to sell their services for adults. By using the site you accept that the owner of the site is disclaimed from all possible responsibilities.whatever the nature. If you do not agree with certain contents of this site, please leave it urgently")}}
+                </p>
 
-                      <a href="http://google.com" data-ppt-btn="" class="btn-system rounded">Quitter</a>
+                      <a href="http://google.com" data-ppt-btn="" class="btn-system rounded">{{ __("Leave Now")}}</a>
 
             </div>
 
@@ -850,7 +837,7 @@ opacity: 0.4
 
 
 								<h6 class="fs-lg text-100">
-								 <div class="addeditmenu" data-key="title"></div>Contactez l'escorte	</h6>
+								 <div class="addeditmenu" data-key="title"></div>{{ __("Contact escort")}}	</h6>
 
 
 
@@ -886,21 +873,21 @@ opacity: 0.4
 
                             @if(isset($user) && $subscribeOrNot===1)
                             <a href="https://api.whatsapp.com/send?phone={{ $ad['whatsapp'] }}&text=Bonjour {{ $ad['title']}} je suis intéressé par ta publication sur viens-yamo.com" target="_blank" rel="nofollow" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
-                                <i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                <i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                 </a>
                                 @endif
 
                                 @if(isset($user) && $subscribeOrNot!==1)
                                 <a data-toggle="modal" data-target="#staticBackdrop" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
 
-                                    <span><i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                    <span><i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                     </a>
                                 @endif
 
                                 @if(empty($user))
                                 <a data-toggle="modal" data-target="#staticBackdrop" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
 
-                                    <span><i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                    <span><i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                     </a>
                                 @endif
                             @endif
@@ -926,7 +913,7 @@ opacity: 0.4
 
                               @if($ad['subscribe_id']!==3)
                                 <a href="https://api.whatsapp.com/send?phone={{ $ad['whatsapp'] }}&text=Bonjour {{ $ad['title']}} je suis intéressé par ta publication sur viens-yamo.com" target="_blank" rel="nofollow" class=" btn-block btn-lg list mb-3 btn-whatsapp mobile-buynow-trigger" data-ppt-btn="">
-                                    <i class="fab fa-whatsapp mr-2"></i> <span>WhatsApp Moi !</span>
+                                    <i class="fab fa-whatsapp mr-2"></i> <span>{{ __("WhatsApp Me!")}}</span>
                                     </a>
 
 							   @endif
@@ -945,7 +932,7 @@ opacity: 0.4
 							  <div ppt-icon-64="" data-ppt-icon-size="64" class="text-primary">
 								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>      </div>
 							  <div class="fs-5 text-600 mt-3">
-								N'oubliez pas de mentionner VIENS YAMO lors de votre appel!    </div>
+								{{ __("Don't forget to mention VIENS YAMO when you call!")}}    </div>
 							</div>
 						  </div>
 						  </a>
@@ -954,26 +941,26 @@ opacity: 0.4
 						  <div ppt-box="" class="rounded">
 						  <div class="_header d-md-flex align-items-center">
 							<div class="_title w-100">
-							  EVITEZ LES ARNAQUES   </div>
+							   {{ __("AVOID SCAMS")}}   </div>
 						  </div>
 							 <ul>
 
 
 							<li class="text-center my-4 p-3">
-							<span>&#10060; Ne JAMAIS payer le transport à un(e) client(e) que vous ne connaissez pas.</span>
+							<span>&#10060; {{ __("NEVER pay for transportation to a customer you don't know.")}}  </span>
 							</li>
 							<li class="text-center my-4 p-3">
-							  <span>&#10060; Ne JAMAIS faire d'avance de paiement sans être avec la personne concernée.</span>
+							  <span>&#10060; {{ __("NEVER make an advance payment without being with the person concerned")}} </span>
 							  </li>
 
 
 							<li class="text-center my-4 p-3">
-							  <span>&#10060; Ne pas faire confiance pour un service trop beau pour être vrai.
+							  <span>&#10060; {{ __("Do not trust a service that is too good to be true.")}} 
 								</span></li>
 
 
 							<li class="text-center my-4 p-3">
-							  <span>&#9989; Dénoncer l'annonce plus bas avec preuves si vous êtes victime d'une tentative d'arnaque.</span>
+							  <span>&#9989;  {{ __("Report the ad below with proof if you are the victim of an attempted scam.")}} </span>
 							</li>
 
 
@@ -985,13 +972,13 @@ opacity: 0.4
 						<div class="p-4 rounded" ppt-box="">
 						   <a href="{{ route('report', ['id'=>$ad['id'], 'type'=>'ads']) }}"><button class="btn-primary text-600  text-center" data-ppt-btn=""
 									style="min-width:60px; background-color: red;">
-								Dénoncer cette annonce
+								{{ __("Report this ad")}} 
 							  </button></a>
 						</div>
 
 						<div class="p-4 hide-mobile rounded" ppt-box="">
 
-						<p class="text-600">Partagez cette annonce via</p>
+						<p class="text-600">{{ __("Share this announcement via")}} </p>
 
 
 						<style>
@@ -1033,13 +1020,13 @@ opacity: 0.4
 
 						</ul>
 
-							  <p class="small opacity-8">Ou copier le lien</p>
+							  <p class="small opacity-8">{{ __("Or copy the link")}} </p>
 							  <div class="field">
 								<i class="fa fa-link"></i>
 								<input type="text" readonly="" id="copylink" value="">
 								<button class="btn-primary btn-sm text-600 js-copy-link text-center" data-ppt-btn=""
 									data-clipboard-target="#copylink" style="min-width:60px;">
-								Copier
+								{{ __("Copy")}} 
 							  </button>
 							  </div>
 
@@ -1098,7 +1085,7 @@ opacity: 0.4
 
     <div class="col-12">
 
-<div class="mb-5 text-700">Annonces Similaires</div>
+<div class="mb-5 text-700"> {{ __("Similar Ads")}}</div>
 
 
 <div class='row'>
@@ -1127,7 +1114,7 @@ opacity: 0.4
 
 
 
-		<div class="button-new" style="background-color: #DA9DDC">{{ $ad1['age'] }} Ans</div>
+		<div class="button-new" style="background-color: #DA9DDC">{{ $ad1['age'] }} {{ __("Years")}}</div>
 
 		</div>
 		  <a href="{{ route('ads.details', ['username' => $ad1['user']['username'],'slug'=>$ad1['slug']]) }}">
@@ -1190,8 +1177,8 @@ opacity: 0.4
               </li>
 
 					</ul>
-					<span style="font-weight:bold">Client accepté :</span> {{ $ad1['accepted'] }} <br>
-					<span style="font-weight:bold">Lieu :</span> {{ $ad1['location'] }}
+					<span style="font-weight:bold"> {{ __("Accepted Customers")}} :</span> {{ $ad1['accepted'] }} <br>
+					<span style="font-weight:bold">{{ __("Location")}} :</span> {{ $ad1['location'] }}
 
 				</nav>
 
@@ -1228,7 +1215,7 @@ opacity: 0.4
               <div class="buttons-wrap">
 
                 <div class="button-new"
-                style="background-color: #DA9DDC; font-size:10px;">{{ $ad1['age'] }} Ans</div>
+                style="background-color: #DA9DDC; font-size:10px;">{{ $ad1['age'] }} {{ __("Years")}}</div>
 
               </div>
               <div style="z-index: 1; bottom:10px; position: absolute;left:10px;">
@@ -1355,23 +1342,25 @@ opacity: 0.4
     <div class="card-2">
         <div class="card-header">
 
-            <h4 class="text-center">Fonctionnalité disponible pour membre VIP</h4>
+            <h4 class="text-center">{{ __("Feature available for VIP member")}} </h4>
                 <div style="position: absolute;right:5px;top:-6px">
                     <i id="close" style="width: 12px;cursor: pointer;" class="fa fa-window-close"></i>
                 </div>
         </div>
 
         <div class="card-body flex justify-content-center" style="display: flex;align-items:center;justify-content:center">
-            <span>Cette fonctionnalité est disponible uniquement pour les membres. Pour contacter une escorte ULTRA VIP,  vous devez tout d'abord créer votre compte 'membre', ensuite prendre un abonnement. Au cas contraire contactez plutôt les escortes Gold et Premium</span>
+            <span>
+				{{ __("This feature is only available to members. To contact an ULTRA VIP escort, you must first create your 'member' account, then take out a subscription. Otherwise, contact Gold and Premium escorts instead.")}}
+			</span>
 
         </div>
         <div class="card-footer">
             <div class="d-flex align-items-center justify-content-between">
                 <div>
-                    <button class="btn btn-danger">Aller aux escortes Gold et Premium</button>
+                    <button class="btn btn-danger">{{ __("Go to Gold and Premium Escorts")}}</button>
                 </div>
                 <div>
-                    <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button class="btn btn-primary">Souscrire Maintenant</button></a>
+                    <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button class="btn btn-primary">{{ __("Subscribe Now")}} </button></a>
 
                 </div>
             </div>
@@ -1394,7 +1383,7 @@ opacity: 0.4
 		</video>
       </div>
       <div class="modal-footer">
-        <button type="button" id="stop" onclick="stopVideo();" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" id="stop" onclick="stopVideo();" class="btn btn-secondary" data-dismiss="modal">{{ __("Close")}} </button>
       </div>
     </div>
   </div>
@@ -1406,17 +1395,19 @@ opacity: 0.4
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Fonctionnalité VIP</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">{{ __("VIP functionality")}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			 <h5 class="modal-title" style="color: red">Fermer</h5>
+			 <h5 class="modal-title" style="color: red">{{ __("Close")}}</h5>
 		</button>
       </div>
       <div class="modal-body">
-        Cette fonctionnalité est disponible uniquement pour les membres. Pour contacter une escorte ULTRA VIP,  vous devez tout d'abord créer votre compte 'membre', ensuite prendre un abonnement. Au cas contraire contactez plutôt les escortes Gold et Premium
+		{{ __("This feature is only available to members. To contact an ULTRA VIP escort, you must first create your 'member' account, then take out a subscription. Otherwise, contact Gold and Premium escorts instead.")}}
+       
       </div>
       <div class="modal-footer">
-	    <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button type="button" class="btn btn-primary">Souscrire Maintenant</button></a>
-        <a href="{{ route('ads.nonvip') }}"> <button type="button" class="btn btn-secondary">Voir Non VIP</button> </a>
+	    <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button type="button" class="btn btn-primary"> {{ __("Subscribe Now")}}</button></a>
+        <a href="{{ route('ads.nonvip') }}"> <button type="button" class="btn btn-secondary">
+			{{ __("See Non VIP")}}  </button> </a>
 
       </div>
     </div>
@@ -1428,14 +1419,14 @@ opacity: 0.4
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="memberOnlyLabel">Membre seulement</h5>
+        <h5 class="modal-title" id="memberOnlyLabel">{{ __("Member only")}}</h5>
         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Cette fonctionnalité est disponible uniquement pour les membres.Vous êtes escort.
+        {{ __("This feature is only available to members. You are an escort.")}} 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __("Close")}}</button>
       </div>
     </div>
   </div>
@@ -1448,23 +1439,24 @@ opacity: 0.4
         <div class="modal-body">
             <div class="card-header">
 
-                <h4 class="text-center">Fonctionnalité disponible pour membre VIP</h4>
+                <h4 class="text-center">{{ __("Feature available for VIP member")}} </h4>
                     <div style="position: absolute;right:5px;top:-6px">
                         <i id="close" style="width: 12px;cursor: pointer;" class="fa fa-window-close"></i>
                     </div>
             </div>
 
             <div class="card-body flex justify-content-center" style="display: flex;align-items:center;justify-content:center">
-                <span>Cette fonctionnalité est disponible uniquement pour les membres. Pour contacter une escorte ULTRA VIP,  vous devez tout d'abord créer votre compte 'membre', ensuite prendre un abonnement. Au cas contraire contactez plutôt les escortes Gold et Premium</span>
+                <span>{{ __("This feature is only available to members. To contact an ULTRA VIP escort, you must first create your 'member' account, then take out a subscription. Otherwise, contact Gold and Premium escorts instead.")}}
+					</span>
 
             </div>
             <div class="card-footer">
                 <div class="d-flex align-items-center" style="justify-content:space-between">
                     <div>
-                        <button class="btn btn-danger">Aller aux escortes Gold et Premium</button>
+                        <button class="btn btn-danger">{{ __("Go to Gold and Premium Escorts")}}</button>
                     </div>
                     <div>
-                        <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button class="btn btn-primary">Souscrire Maintenant</button></a>
+                        <a href="{{ route('upgrade-plan', ['membership'=>'null']) }}"> <button class="btn btn-primary">{{ __("Subscribe Now")}} </button></a>
 
                     </div>
                 </div>

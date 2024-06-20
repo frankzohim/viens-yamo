@@ -1,7 +1,7 @@
 @extends("layouts.Frontend.master")
 
 @section('title')
-Achat de credit
+@section('title', __('Buy credit'))
 @endsection
 
 @section("content")
@@ -13,7 +13,7 @@ Achat de credit
         <div class="card-popup-content">
         <div class="text-white mt-3">
             <strong class="">XAF{{ $price }}</strong>
-            <div class="text-truncate mt-2 opacity-8 text-600">Achat de Credit</div>
+            <div class="text-truncate mt-2 opacity-8 text-600">{{ __("Buy credit")}}</div>
 
         </div>
         </div>
@@ -54,7 +54,7 @@ Achat de credit
         <input type="hidden" name="price" value="{{ $price }}">
 
 
-    <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile Money avec Cinetpay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
+    <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile Money Cinetpay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
     <input type="hidden" name="charset" value="utf-8">
     <input type="hidden" name="custom" value="SUBS-mem1-10-1835253144" class="paymentcustomfield">
     <input type="hidden" name="rm" value="2">
@@ -91,7 +91,7 @@ Achat de credit
 
 
 
-                    <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile money avec Cool Pay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
+                    <button class="btn mt-n2  btn mt-n2-block font-weight-bold text-uppercase " style="cursor:pointer">Mobile Money  Cool Pay</button><input type="hidden" name="bn" value="PREMIUMPRESSLIMITED_SP">
                     <input type="hidden" name="charset" value="utf-8">
                     <input type="hidden" name="custom" value="SUBS-mem1-10-1835253144" class="paymentcustomfield">
                     <input type="hidden" name="rm" value="2">
@@ -157,7 +157,7 @@ Achat de credit
       <div class="card-popup-content">
 
 
-       <h5 class="text-white">Achat de Credit</h5>
+       <h5 class="text-white">{{ __("Buy credit")}}</h5>
 
       </div>
 </div>
@@ -168,7 +168,7 @@ Achat de credit
                 @csrf
                 <div class="form-group mt-4">
 
-                    <label class="">Entrez le nombre de credit à acheter</label>
+                    <label class="">{{ __("Enter the number of credits to purchase")}}</label>
 
                     <select name="price" id="" class="form-control">
                         <option value="100">100</option>
@@ -195,7 +195,7 @@ Achat de credit
 
                     </div>
 
-                    <div><button type="submit" data-ppt-btn class="btn-primary btn-lg my-3">Acheter</button></div>
+                    <div><button type="submit" data-ppt-btn class="btn-primary btn-lg my-3">{{ __("Buy")}}</button></div>
             </form>
 
 

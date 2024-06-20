@@ -22,7 +22,7 @@
 	<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
-    <title>Créer une annonce</title>
+    <title>{{ __("Create ad")}}</title>
 	<link rel="stylesheet" href="{{ asset('assets/intl-tel-input-master/build/css/intlTelInput.css') }}">
 
     <style>.preload-hide { display:none; }</style><meta name='robots' content='max-image-preview:large'>
@@ -59,7 +59,7 @@
 <div id="ppt-add-listing-save" style="display:none;">
     <div class="container py-5 my-5">
         <div class="alert alert-primary p-3 alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-spin fa-sync mr-3"></i>  Enregistrement de vos modifications</strong> - Cela peut prendre quelques minutes, veuillez patienter...
+            <strong><i class="fa fa-spin fa-sync mr-3"></i>{{ __("Registration")}}  </strong> - {{ __("This may take a few minutes, please be patient")}}...
         </div>
     </div>
 </div>
@@ -67,7 +67,7 @@
 <div id="ppt-add-listing-save-success" style="display:none;">
     <div class="container py-5 my-5">
         <div class="alert alert-success p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-check mr-3"></i>  Super</strong> - Votre annonce a été créée, cliquez ici pour la mettre en avant.
+            <strong><i class="fa fa-check mr-3"></i>  {{ __("Great")}}</strong> - {{ __("Your ad has been created, boost it")}}.
         </div>
     </div>
 </div>
@@ -76,7 +76,7 @@
 <div id="" >
     <div class="container py-5 my-5">
         <div class="alert alert-success p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-check mr-3"></i>  Super</strong> - Votre annonce a été créée, cliquez ici pour la mettre en avant.
+            <strong><i class="fa fa-check mr-3"></i>  {{ __("Great")}}</strong> - {{ __("Your ad has been created, boost it")}}.
         </div>
     </div>
 </div>
@@ -86,7 +86,7 @@
 <div id="ppt-invalid-fields" >
     <div class="container py-5 my-5">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text">{{ session('error') }}</span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text">{{ session('error') }}</span>
         </div>
     </div>
 </div>
@@ -95,7 +95,7 @@
 <div id="ppt-invalid-fields" style="display:none;">
     <div class="container py-5 my-5">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text"></span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text"></span>
         </div>
     </div>
 </div>
@@ -119,7 +119,7 @@
 
     <div class="card card-add-block mb-0"><div class="card-body">
 
-    <div class="_title"><span class="title-number bg-secondary"><i class="fa fa-file"></i></span> Créer une annonce</div>
+    <div class="_title"><span class="title-number bg-secondary"><i class="fa fa-file"></i></span> {{ __("Create ad")}}</div>
 
 <form  action="{{ route('ads.save') }}" id="global-form" enctype="multipart/form-data" method="post">
 @csrf
@@ -131,7 +131,7 @@
 
 <div class="col-md-6">
 
-    <label>Je suis <span class="text-danger">*</span> </label>
+    <label>{{ __("I am")}} <span class="text-danger">*</span> </label>
 
     <div class="mt-2">
 
@@ -151,7 +151,7 @@
 
 <div class="col-md-6">
 
-    <label>Âge <span class="text-danger">*</span> </label>
+    <label>{{ __("Age")}} <span class="text-danger">*</span> </label>
 
     <div class="mt-2">
 
@@ -172,12 +172,12 @@
 
 
 <div class="col-md-6 mobile-mb-2">
-<label>Numéro WhatsApp et Appel <span class="text-danger">*</span></label>
+<label> {{ __("WhatsApp number & Call")}} <span class="text-danger">*</span></label>
 
 <div class="form-group position-relative">
     	<input  type="tel" class="form-control required"
 		data-key="phone" name="phone" id="phone" value="" required>
-		<span id="valid-msg" style="display:none">✓ Valid</span>
+		<span id="valid-msg" style="display:none">✓ {{ __("Valid")}}</span>
 		<span id="error-msg" class="hide"></span>
   </div>
 
@@ -185,11 +185,11 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-<label>Ville </label>
+<label>{{ __("Town")}} </label>
 <div class="form-group position-relative">
     @if($towns)
     <select class="form-control" name="town" id="town" data-key="town" onchange="fetchQuarters(this)">
-		<option value="">Sélectionner la ville</option>
+		<option value="">{{ __("Select town")}}</option>
 		@forelse ($towns as $town)
 			<option value="{{  $town['id'] }}" @if (old('town') ===$town['id']) selected @endif>{{ $town['town_name'] }}</option>
 		@empty
@@ -206,11 +206,11 @@
 
 
 <div class="col-md-12 mobile-mb-2" style="display: none" id='quarterList'>
-<label>Quartier <span class="text-danger">*</span> </label>
+<label>{{ __("Quarter")}} <span class="text-danger">*</span> </label>
 
 <div class="form-group position-relative" id='selectList'>
     <select class="form-control" name="quarter" id="quarter" data-key="quarter">
-		<option value="">Sélectionner le quartier</option>
+		<option value="">{{ __("Select quarter")}}</option>
 
 
 	</select>
@@ -220,10 +220,10 @@
 </div>
 
 <div class="col-md-6 mobile-mb-2">
-<label>Titre <span class="text-danger">*</span> </label>
+<label> {{ __("Title")}}<span class="text-danger">*</span> </label>
 
 <div class="form-group position-relative">
-    <input type="text" placeholder="Entrer le titre de l'annonce" class="form-control" name="title" id="title" data-key="title" value="{{ old('title') }}" autocomplete="current-password">
+    <input type="text" placeholder="{{ __('Enter ads\'s title')}}" class="form-control" name="title" id="title" data-key="title" value="{{ old('title') }}" autocomplete="current-password">
 
   </div>
 
@@ -231,7 +231,7 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-<label>Catégorie <span class="text-danger">*</span> </label>
+<label>{{ __("Category")}} <span class="text-danger">*</span> </label>
 <div class="form-group position-relative">
 
 	@if($adsCategories)
@@ -253,14 +253,14 @@
 
 <div class="col-md-6 mobile-mb-2">
 
-	<label>Déplacement<span class="text-danger">*</span> </label>
+	<label>{{ __("Place")}}<span class="text-danger">*</span> </label>
 		<input type="hidden" id="user_id" value="{{ $user->id }}" name="user_id">
 		<div class="form-group position-relative">
 
 					 <select class="form-control" name="location" id="location">
-						<option value="Reçoit ou se déplace" @if (old('location') ==='Reçoit ou se déplace') selected @endif>Reçoit ou se déplace</option>
-						<option value="Se déplace seulement" @if (old('location') ==='Se déplace seulement') selected @endif>Se déplace seulement</option>
-						<option value="Reçoit seulement" @if (old('location') ==='Reçoit seulement') selected @endif>Reçoit seulement</option>
+						<option value="Reçoit ou se déplace" @if (old('location') ==='Reçoit ou se déplace') selected @endif> {{ __("Receives or moves")}}</option>
+						<option value="Se déplace seulement" @if (old('location') ==='Se déplace seulement') selected @endif> {{ __("Moves only")}}</option>
+						<option value="Reçoit seulement" @if (old('location') ==='Reçoit seulement') selected @endif> {{ __("Receives only")}}</option>
 				</select>
         </div>
 
@@ -268,13 +268,13 @@
 </div>
 <div class="col-md-6 mobile-mb-2">
 
-	<label> Clients Acceptés <span class="text-danger">*</span> </label>
+	<label> {{ __("Accepted Customers")}} <span class="text-danger">*</span> </label>
 <div class="form-group position-relative">
 
     <select class="form-control" name="accepted" id="accepted">
-			<option value="Hommes" @if (old('accepted') ==='Hommes') selected @endif>Hommes</option>
-			<option value="Femmes" @if (old('accepted') ==='Femmes') selected @endif>Femmes</option>
-			<option value="Tout le monde" @if (old('accepted') ==='Tout le monde') selected @endif>Tout le monde</option>
+			<option value="Hommes" @if (old('accepted') ==='Hommes') selected @endif> {{ __("Men")}}</option>
+			<option value="Femmes" @if (old('accepted') ==='Femmes') selected @endif> {{ __("Woman")}}</option>
+			<option value="Tout le monde" @if (old('accepted') ==='Tout le monde') selected @endif> {{ __("Everyone")}}</option>
 	</select>
   </div>
 
@@ -307,7 +307,7 @@
   <div  class="text-muted small float-right">
     <span></span>
   </div>
-    <label class="w-100">Chargez une courte vidéo (Optionnel)   </label>
+    <label class="w-100">{{ __("Upload a short video (Optional)")}}   </label>
     <input type="file" name="video" id="video" accept="video/*">
   </div>
 
@@ -321,7 +321,7 @@
 <div class="col-md-12 mobile-mb-2">
 
 	<div >
-			<label class="w-100">Photos (10 maximum)  <span class="text-danger">*</span> (.png, .jpg, .jpeg) </label>
+			<label class="w-100">{{ __("Pictures")}}  (10 maximum)  <span class="text-danger">*</span> (.png, .jpg, .jpeg) </label>
 
 			<div class="cardbox closed" onclick="jQuery('#ratesbox, #ratesbit').toggle();">
 				  <i class="fa fa-cloud-upload" style="color:red"></i>
@@ -490,8 +490,8 @@ jQuery(document).ready(function() {
 		<div class="row">
 <div class="col-md-8 mobile-mb-2">
 
- En cliquant sur créer mon annonce, j'accepte les <a href="#">conditions d'utilisation</a>  de
- <a href="#">viens-yamo.com</a> et sa <a href="#">politique de confidentialité</a>.
+ {{ __("By clicking on create my ad, I accept the")}} <a href="#">{{ __("terms of use")}}</a>  {{ __("of")}}
+ <a href="#">viens-yamo.com</a> {{ __("and his")}} <a href="#">{{ __("privacy policy")}}</a>.
 
 </div>
 
@@ -500,7 +500,7 @@ jQuery(document).ready(function() {
     <div>
     <button data-ppt-btn="" class=" btn-system btn-forward btn-lg scroll-top-quick text-600"
 	type="button" id="register-btn"
-	onclick="processSubmitForm()">Créer l'annonce</button>
+	onclick="processSubmitForm()"> {{ __("Create the ad")}}</button>
 
 
     </div>
@@ -543,7 +543,7 @@ jQuery(document).ready(function() {
 <section class="mb-5  text-600 show-mobile">
 <div class="container">
 
-<button type="button" data-ppt-btn="" class=" btn-lg btn-secondary btn-save" id="mainSaveBtn">Créer l'annonce</button>
+<button type="button" data-ppt-btn="" class=" btn-lg btn-secondary btn-save" id="mainSaveBtn">{{ __("Create the ad")}}</button>
 
 </div>
 </section>

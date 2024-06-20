@@ -18,11 +18,11 @@
     <div>
 
       <div class="text-600 mb-2">
-        Tableau de bord
+         {{ __("Dashboard")}}
       </div>
 
       <div class="opacity-5 text-400 small">
-        Vous trouverez ici un aperçu de votre compte, des avis de compte récents et des alertes.      </div>
+       {{ __("Here you will find an overview of your account, recent account reviews and alerts.")}}      </div>
     </div>
 
   </div>
@@ -43,14 +43,14 @@
         <div>
 
           <div class="text-600 mb-2">
-            Achat du Crédit
+             {{ __("Purchase of Credit")}}
 
 
 
           </div>
 
           <div class="opacity-5 text-400 small">
-             Achetez du crédit pour booster vos annonces.
+              {{ __("Buy credit to boost your ads.")}}
          </div>
         </div>
 
@@ -72,13 +72,13 @@
     <div>
 
       <div class="text-600 mb-2">
-        Mon Profil
+        {{ __("My Profile")}}
 
 
       </div>
 
       <div class="opacity-5 text-400 small">
-        Ici, vous pouvez afficher, gérer et mettre à niveau vos profils existants.     </div>
+        {{ __("Here you can view, manage and upgrade your existing profiles.")}}    </div>
     </div>
 
   </div>
@@ -99,11 +99,11 @@
         <div>
 
           <div class="text-600 mb-2">
-            Mes Abonnements
+            {{ __("My Subscriptions")}}
           </div>
 
           <div class="opacity-5 text-400 small">
-           Ici, vous pouvez afficher tout vos abonnements en cours    </div>
+          {{ __("Here you can view all your current subscriptions")}}    </div>
         </div>
 
       </div>
@@ -126,7 +126,7 @@
     <div>
 
       <div class="text-600 mb-2">
-        Solde &amp; Factures
+         {{ __("Balance &amp; Invoices")}}
 
 		<span class="badge btn-danger">{{ $userBalance }} C</span>
 
@@ -134,7 +134,7 @@
       </div>
 
       <div class="opacity-5 text-400 small">
-        Consultez le solde de votre compte, vos factures et vos retraits récents ici.      </div>
+        {{ __("View your account balance, bills and recent withdrawals here.")}}      </div>
     </div>
 
   </div>

@@ -60,7 +60,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
    <div id="ppt-add-listing-save" style="display:none">
     <div class="container">
         <div class="alert alert-primary p-3 alert-dismissible fade show" role="alert">
-            <strong><i class="fa fa-spin fa-sync mr-3"></i>  Enregistrement</strong> - Cela peut prendre quelques minutes, veuillez patienter...
+            <strong><i class="fa fa-spin fa-sync mr-3"></i> {{ __("Saving Your Changes")}} </strong> - {{ __("This may take a few minutes, please wait")}}...
         </div>
     </div>
 </div>
@@ -78,7 +78,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div id="ppt-invalid-fields1" >
                                     <div class="container ">
                                         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-                                            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text">{{$errors->first()}}</span>
+                                            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text">{{$errors->first()}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                 <div id="ppt-invalid-fields" style="display:none;">
     <div class="container ">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text"></span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i> {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text"></span>
         </div>
     </div>
 
@@ -94,7 +94,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     <div id="ppt-invalid-fields" style="display:none;">
     <div class="container ">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text"></span>
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i> {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text"></span>
         </div>
     </div>
 </div>
@@ -107,10 +107,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <span class="fal fa-envelope mb-3 fa-3x text-primary">&nbsp;</span>
 
-		<h2 class="mb-3" data-ppt-title>Remplissez le formulaire suivant pour nous faire part de vos preoccupations</h2>
+		<h2 class="mb-3" data-ppt-title>{{ __("Complete the following form to let us know your concerns")}}</h2>
 
         <p class="lead mb-4" data-ppt-subtitle>
-         Vous pouvez nous écrire via les réseaux sociaux.</p>
+         {{ __("You can write to us via social networks")}}.</p>
 
           </div>
       <div class="col-lg-6 text-center"><div class="_content py-3 ppt-forms style3">
@@ -122,19 +122,19 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
               <div class="row">
                 <div class="col-md-6 mobile-mb-2 mb-3 mb-lg-0">
                   <input type="text" class="form-control contact-required" tabindex="1"
-                  data-key="name" name='name' id="name" placeholder="Nom Complet">
+                  data-key="name" name='name' id="name" placeholder="{{ __('Full Name')}}">
                 </div>
                 <div class="col-md-6 mobile-mb-2 mb-3 mb-lg-0">
-                  <input placeholder="Téléphone" data-key="phone" id="phone" name='phone' type="tel" class="form-control contact-required"
+                  <input placeholder="{{ __('Phone number')}}" data-key="phone" id="phone" name='phone' type="tel" class="form-control contact-required"
                   tabindex="2">
                 </div>
               <div class="col-12 my-md-4 mobile-mb-2 mb-3">
-                  <input placeholder="Sujet" data-key="subject" id ="subject" type="text" class="form-control contact-required" data-name="subject"
+                  <input placeholder="{{ __('Subject')}}" data-key="subject" id ="subject" type="text" class="form-control contact-required" data-name="subject"
                   name='subject'
                   tabindex="2">
                 </div>
                 <div class="col-12 my-md-4 mobile-mb-2 mb-3">
-                  <textarea placeholder="Votre Message..." name='message' data-key="message" id="message" class="form-control contact-required"  data-name="message" tabindex="3" style="min-height:150px;"></textarea>
+                  <textarea placeholder="{{ __('Your Message')}}..." name='message' data-key="message" id="message" class="form-control contact-required"  data-name="message" tabindex="3" style="min-height:150px;"></textarea>
                 </div>
 
             </div>
@@ -153,7 +153,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
             </div>
 
             <div class="col-md-12 text-md-right">
-            <button type="button" onclick="processSubmitForm();" data-btn-submit data-ppt-btn class=" "  style="background-color: #ED5858;color:white">Envoyer</button>
+            <button type="button" onclick="processSubmitForm();" data-btn-submit data-ppt-btn class=" "  style="background-color: #ED5858;color:white">{{ __("Send")}}</button>
           </form>
             </div>
 
@@ -184,11 +184,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-            <h6 class="mb-3 text-uppercase text-primary" data-ppt-desc>Parlons</h6>
+            <h6 class="mb-3 text-uppercase text-primary" data-ppt-desc>{{ __("Let's talk")}}</h6>
 
-		<h2 class="mb-3" data-ppt-title>Vous avez des questions ? N'hésitez pas à nous contacter.</h2>
+		<h2 class="mb-3" data-ppt-title>{{ __("You have questions ? do not hesitate to contact us")}}.</h2>
 
-        <p class="lead mb-4" data-ppt-subtitle>Vous pouvez nous écrire via les réseaux sociaux. ou remplir le formulaire de contact ci-dessus.</p>
+        <p class="lead mb-4" data-ppt-subtitle>{{ __("You can write to us via social networks. or fill out the contact form above")}}.</p>
 
           <div class="col-md-6 text-right d-none d-md-block">
   <div class="ppt-icons-social  _style5 size-md rounded">

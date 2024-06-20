@@ -18,7 +18,7 @@
     </div>
 
     <div class="fs-sm opacity-5 text-truncate" style="max-width:350px">
-        Téléphone &bull; {{ $user->phone_number }}
+         {{ __("Phone")}}  &bull; {{ $user->phone_number }}
     </div>
 </a>
 </div>
@@ -39,8 +39,8 @@
     <div class="badge_tooltip text-center" data-direction="top">
     <div class="badge_tooltip__initiator">
 
-   <i class="fal fa fa-star" style="color:#000000"></i> Acheter du crédit  </div>
-    <div class="badge_tooltip__item">Achat Crédit </div>
+   <i class="fal fa fa-star" style="color:#000000"></i>   {{ __("Buy credit")}}   </div>
+    <div class="badge_tooltip__item">  {{ __("Purchase Credit")}} </div>
   </div>
 
 </div>
@@ -58,7 +58,7 @@
                     &nbsp;
                     Balance : {{ $userBalance }}
             </div>
-        <div class="badge_tooltip__item">Profil Verifie </div>
+        <div class="badge_tooltip__item"> {{ __("Verified Profile")}}  </div>
       </div>
 
     </div>
@@ -75,7 +75,7 @@
   <form method="POST" action="{{ route('logout') }}" id="logoutprofile">
                                 @csrf
                             </form>
-<span class="hide-mobile" onclick="event.preventDefault(); document.getElementById('logoutprofile').submit();">Déconnexion</span>
+<span class="hide-mobile" onclick="event.preventDefault(); document.getElementById('logoutprofile').submit();"> {{ __("Logout")}}</span>
 
 </a>
 </li>

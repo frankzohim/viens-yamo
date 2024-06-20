@@ -1,17 +1,17 @@
 @extends('layouts.backoffice.escort.app')
-@section('title', __('Tableau de bord'))
+@section('title', __('Profile update'))
 
 @section('content')
 
 
 
-<p class="mb-4">Ici, vous pouvez afficher, modifier et gérer les détails de votre profil.</p>
+<p class="mb-4">{{ __("Here you can view, edit and manage your profile details")}}.</p>
 
 @if ($errors->any())
 <div id="ppt-invalid-fields" >
     <div class="container py-5 my-5">
         <div class="alert alert-danger p-3  alert-dismissible fade show" role="alert">
-            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  Erreur : </strong> <span id="ppt-invalid-fields-text">
+            <strong><i class="fas fa-exclamation-triangle mr-2"></i>  {{ __("Error")}} : </strong> <span id="ppt-invalid-fields-text">
 				{{ implode('', $errors->all('<div>:message</div>')) }}
 			</span>
         </div>
@@ -32,7 +32,7 @@
 
 
     <div class="col-md-6 mb-3">
-    <label class="text-600">Nom d'utilisateur <span class="text-danger">*</span></label>
+    <label class="text-600">{{ __("Username")}} <span class="text-danger">*</span></label>
     <input type="text" class="form-control" name="username"
 	data-key="username" id="username" data-required="1"
 	value="{{ ucfirst($user->username) }}" />
@@ -45,17 +45,17 @@
     </div>
 
     <div class="col-md-6 mb-3">
-    <label class="text-600">Téléphone</label>
+    <label class="text-600">{{ __("Phone number")}}</label>
     <input type="text" class="form-control" name="phone_number" data-key="phone" id="phone"
 	 value="{{ $user->phone_number }}" />
     </div>
     <div class="col-md-6 mb-3">
-        <label class="text-600">Password</label>
+        <label class="text-600">{{ __("Password")}}</label>
         <input type="password" class="form-control" name="password" data-key="phone" id="phone"
           />
         </div>
     <div class="col-md-6 mb-3">
-    <label class="text-600">Ville</label>
+    <label class="text-600">{{ __("Town")}}</label>
     <select name="town_id" id="town" data-key="town" class="form-control">
 		@foreach ($towns as $town)
 			<option value="{{ $town['id'] }}" @if ($town['id'] == $user->town->id) selected @endif>
@@ -68,7 +68,7 @@
 <div class="col-12">
 
 <div ppt-flex-between>
-<button type="button" data-ppt-btn class="btn-primary mt-4" onclick="processSubmitForm()">Enregistrer</button>
+<button type="button" data-ppt-btn class="btn-primary mt-4" onclick="processSubmitForm()">{{ __("Save")}}</button>
 
 </div>
 

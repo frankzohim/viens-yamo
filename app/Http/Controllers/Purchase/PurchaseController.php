@@ -17,7 +17,7 @@ class PurchaseController extends Controller
 {
     public function purchaseWithCredit(Request $request){
         $purchaseService=(new PurchaseMembershipService())->purchaseWithCredit($request->membership_id,$request->announcement_id);
-        dd($purchaseService);
+        //dd($purchaseService);
         if($purchaseService->code===200){
 
             return view('membership.congrats');

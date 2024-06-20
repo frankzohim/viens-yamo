@@ -6,9 +6,9 @@
 
 <div style="display: flex;align-items:center;">
     <div style="flex: 1">
-        <div class="fs-lg text-600 mb-2 hide-mobile">Bon Retour</div>
+        <div class="fs-lg text-600 mb-2 hide-mobile"> {{ __("Welcome back!")}}</div>
 
-    <p class="mb-4 hide-mobile">Voici un aperçu de votre compte.</p>
+    <p class="mb-4 hide-mobile"> {{ __("Here is an overview of your account.")}}</p>
     </div>
     {{-- <div>
         Balance : {{ $userBalance }} Xp
@@ -25,7 +25,7 @@
         <div ppt-icon-size="32" class="mr-3 hide-ipad show-desktop-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
 
         <span>
-            <div class="text-600">Noms</div>
+            <div class="text-600"> {{ __("Name")}}</div>
             <div class="small opacity-8" style="max-width:150px;">{{ ucfirst($user->username) }}</div>
         </span>
 
@@ -50,7 +50,7 @@
         </div>
 
         <span>
-            <div class="text-600">Téléphone</div>
+            <div class="text-600">{{ __("Phone")}}</div>
             <div class="small opacity-8 text-truncate" style="max-width:150px;"> {{ $user->phone_number }}</div>
         </span>
 
@@ -68,11 +68,10 @@
 <div class="col-md-6">
 
 <div class="lh-30">
-<div class="fs-5 text-600 mb-2">Bon Retour!</div>
-Nous mettons constamment à jour et améliorons notre service. Si vous avez des questions ou des commentaires,
-contactez-nous – nous serions ravis de les entendre.</div>
+<div class="fs-5 text-600 mb-2">{{ __("Welcome back!")}}</div>
+{{ __("We are constantly updating and improving our service. If you have any questions or comments,contact us - we'd love to hear them.")}} </div>
 
-<div class="mt-3 fs-sm contactuslink"><a href="/contact/" class="btn-xs btn-system" data-ppt-btn>Contactez-nous</a></div>
+<div class="mt-3 fs-sm contactuslink"><a href="/contact/" class="btn-xs btn-system" data-ppt-btn>{{ __("Contact us")}}</a></div>
 
 </div>
 <div class="col-md-6">

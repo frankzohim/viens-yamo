@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('assets/favicon/manifest.json') }}">
 
-    <title>Connectez vous</title>
+    <title>{{ __("Log In")}}</title>
 
     <style>.preload-hide { display:none; }</style>
     <meta name='robots' content='max-image-preview:large'>
@@ -85,7 +85,7 @@
 
 
 <div class="pb-3">
-  <h1>Connexion</h1>
+  <h1>{{ __("Log In")}}</h1>
 </div>
 
 <div class="">
@@ -185,18 +185,18 @@ function login_process(){
 <form id="form_user_login" name="form_login" action="{{ route('login') }}" method="post">
     @csrf
   <div class="form-group position-relative">
-    <input type="text" class="form-control" placeholder="Entrez votre numero de télephone" name="phone_number" id="phone_number" value="" autocomplete="current-password">
+    <input type="text" class="form-control" placeholder="{{ __('Enter your phone number')}}" name="phone_number" id="phone_number" value="" autocomplete="current-password">
     <i class="fal fa-phone"></i>
   </div>
   <div class="form-group position-relative">
-    <input type="password" placeholder="Entrez votre mot de passe" class="form-control" name="password" id="password" value="" autocomplete="current-password">
+    <input type="password" placeholder="{{ __('Enter your password')}}" class="form-control" name="password" id="password" value="" autocomplete="current-password">
 
     <i class="fal fa-lock"></i>
 
     <i class="fa fa-eye" onclick="TogglePass('password');"></i>
   </div>
     <div class="form-group">
-    <button type="submit" data-ppt-btn="" id="btn" style="background: rgba(214, 214, 214, 0.884);cursor:cell" class=" btn-block  btn-lg font-weight-bold text-uppercase">Connexion</button>
+    <button type="submit" data-ppt-btn="" id="btn" style="background: rgba(214, 214, 214, 0.884);cursor:cell" class=" btn-block  btn-lg font-weight-bold text-uppercase">{{ __("Log In")}}</button>
   </div>
   <!-- Google Recaptcha -->
         <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
@@ -206,15 +206,15 @@ function login_process(){
       <label class="custom-control custom-checkbox">
       <input type="checkbox" name="remember" class="custom-control-input" checked="">
       <div class="custom-control-label">
-       Se Souvenir de moi      </div>
+       {{ __("Remember me")}}      </div>
       </label>
     </div>
     <div class="col-md-6 text-center text-md-right">
-      <a href="{{ route('check-number') }}"><u>Mot de passe oublié?</u></a>
+      <a href="{{ route('check-number') }}"><u>{{ __("Forgot your password?")}}</u></a>
     </div>
     <div class="col-md-12  text-md-right">
-        pas de compte?
-        <a href="{{ route('register') }}" rel="nofollow"><u>S'enregistrer</u></a>
+        {{ __("No account?")}}
+        <a href="{{ route('register') }}" rel="nofollow"><u>{{ __("Register")}}</u></a>
       </div>
   </div>
   <input type="hidden" name="testcookie" value="1">
