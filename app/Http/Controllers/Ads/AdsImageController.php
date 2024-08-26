@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Ads image manager
+ */
 namespace App\Http\Controllers\Ads;
 use App\Http\Controllers\Controller;
 use  App\Services\Api\UrlApiService;
@@ -30,6 +32,7 @@ class AdsImageController extends Controller
 
                 return response('Extension invalide', 400);
             }
+            
             else{
 
                 //Storing file in disk
@@ -102,6 +105,7 @@ class AdsImageController extends Controller
 
     }
 
+
     public function displayAdsImage($id, $path)
     {
      
@@ -121,9 +125,8 @@ class AdsImageController extends Controller
 
     public function deletePicture($id, $path, Request $request){
 
-      
         //Only delete if we have one image left
-        if($request->imagesLeft < 2){
+        if($request->imagesLeft < 3){
                  return Redirect::back()->withErrors(['warningImage' => 'Impossible de supprimer, votre annonce doit avoir au moins une image']);
         }
 

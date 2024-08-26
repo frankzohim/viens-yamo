@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Ads management
+ */
 namespace App\Http\Controllers\Ads;
 use App\Http\Controllers\Controller;
 use  App\Services\Api\UrlApiService;
@@ -51,8 +53,6 @@ class AdsController extends Controller
         else{
                 return to_route("login");
             }
-
-
     }
 
     public function save(Request $request){

@@ -93,7 +93,7 @@
             </a>
             </div>
             <div class="badge_tooltip__item text-center">
-              {{ ucfirst($allAd['user']['username']) }}
+              {{-- {{ ucfirst($allAd['user']['username']) }} --}}
            <div class='small opacity-5'>{{ $allAd['age'] }} - {{ ucfirst($allAd['town']['town_name']) }}</div>    </div>
             </div>
 
@@ -403,7 +403,8 @@ function filterToggle(val){
 							  <div class="d-sm-flex flex-sm-column">
 								<div class="fs-4 text-600 mb-2">
 
-                                    <a href="{{ route('ads.details', ['username' => $ad['user']['username'],'slug'=>$ad['slug']]) }}" class="text-dark _adtitle">{{ ucfirst($ad['user']['username']) }} .
+                                    <a href="{{ route('ads.details', ['username' => $ad['user']['username'],'slug'=>$ad['slug']]) }}" class="text-dark _adtitle">
+                                      {{-- {{ ucfirst($ad['user']['username']) }} . --}}
                                       {{ truncate($ad['title'],40) }}
 											<span class="text-online">•</span>
 											</a>

@@ -345,7 +345,7 @@
   Dropzone.options.adsDropzone = { // camelized version of the `id`
     paramName: "file", // The name that will be used to transfer the file
     maxFilesize: 1, // MB
-	maxFiles : 2,
+	maxFiles : 5,
 	addRemoveLinks: true,
 	removedfile: function(file) {
         var name = file.name;

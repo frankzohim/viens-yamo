@@ -303,16 +303,15 @@ data-0="2" data-margin="20" data-autoplay="1" style="z-index:12">
 		 
 			</div>
 			<div class=" text-center">
-			<div class='small opacity-5'><a href="#" class="text-dark" data-toggle="modal" data-target="#exampleModal{{$image['id']}}"><i class="fa fa-trash" style="color:red;"></i> </a></div>    </div>
+			<div class='small opacity-5'><a href="#" class="text-dark" data-toggle="modal" data-target="#exampleModal{{$image['id']}}">
+				<i class="fa fa-trash" style="color:red;"></i> </a></div>    </div>
 		  </div>
-
-
-		  
 
 		</div>
      @empty
       
-    @endforelse    
+    @endforelse   
+
 
 </div>
 </div>
@@ -345,7 +344,7 @@ data-0="2" data-margin="20" data-autoplay="1" style="z-index:12">
       
     @endforelse            
 	<div >
-			<label class="w-100">{{ __("Pictures")}} (2 maximum) ( {{ __("you can still add")}} {{ 2 - count($ad['images']) }} {{ __("Pictures")}}) <span class="text-danger">*</span> (.png, .jpg, .jpeg) </label> 
+			<label class="w-100">{{ __("Pictures")}} (5 maximum) ( {{ __("you can still add")}} {{ 5 - count($ad['images']) }} {{ __("Pictures")}}) <span class="text-danger">*</span> (.png, .jpg, .jpeg) </label> 
 		   
 			<div class="cardbox closed" onclick="jQuery('#ratesbox, #ratesbit').toggle();">
 				  <i class="fa fa-cloud-upload" style="color:red"></i>
